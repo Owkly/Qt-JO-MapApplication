@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/images">
         <file>images/image.png</file>
+        <file>images/france-eiffel-tower-paris.jpg</file>
     </qresource>
 </RCC>

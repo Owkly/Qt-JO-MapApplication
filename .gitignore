@@ -1,3 +1,5 @@
 # ignorer le dossier .vscode
 .vscode
 sujet.pdf
+.qmake.stash
+Map_JO
