@@ -1,14 +1,29 @@
-#ifndef MAINWINDOW_HPP
-#define MAINWINDOW_HPP
+// #ifndef MAINWINDOW_HPP
+// #define MAINWINDOW_HPP
+
+// #include <QMainWindow>
+
+// class MainWindow : public QMainWindow {
+//     Q_OBJECT
+
+// public:
+//     explicit MainWindow(QWidget *parent = nullptr);
+//     ~MainWindow();
+// };
+
+// #endif // MAINWINDOW_HPP
+
+
 
 #include <QMainWindow>
+#include <QLabel>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-};
+    MainWindow(QWidget *parent = nullptr);
 
-#endif // MAINWINDOW_HPP
+private:
+    QLabel *imageLabel;
+};
