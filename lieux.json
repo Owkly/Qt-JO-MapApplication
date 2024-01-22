@@ -6,7 +6,8 @@
                 "nom": "100m femmes",
                 "adresse": "Plaine St-Denis, 93210, St-Ouen",
                 "description": "100m d'athlétisme pour les femmes",
-                "image": "chemin/vers/image/stade.jpg",
+                "image_lieu": "chemin/vers/image/stade_de_france.jpg",
+                "image_epreuve": "chemin/vers/image/100m.jpg",
                 "transports": [
                     "Ligne 4",
                     "Rer B"
@@ -20,7 +21,8 @@
                 "nom": "Rugby hommes",
                 "adresse": "Stade de France, Plaine St-Denis, 93210, St-Ouen",
                 "description": "Match de rugby opposant la France à l'Australie",
-                "image": "chemin/vers/image/stade.jpg",
+                "image_lieu": "chemin/vers/image/stade_de_france.jpg",
+                "image_epreuve": "chemin/vers/image/rugby.jpg",
                 "transports": [
                     "Ligne 4",
                     "Rer B"
@@ -34,7 +36,8 @@
                 "nom": "Gymnastique Artistique Individuelle Femmes",
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
                 "description": "Epreuves de gymnastiques individuelles pour les femmes",
-                "image": "chemin/vers/image/gymnastique_femmes.jpg",
+                "image_lieu": "chemin/vers/image/bercy_arena.jpg",
+                "image_epreuve": "chemin/vers/image/gymnastique_femmes.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 6",
@@ -49,7 +52,8 @@
                 "nom": "Gymnastique Artistique Equipe Hommes",
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
                 "description": "Epreuve de gymnastique par équipe pour les hommes",
-                "image": "chemin/vers/image/gymnastique_hommes.jpg",
+                "image_lieu": "chemin/vers/image/bercy_arena.jpg",
+                "image_epreuve": "chemin/vers/image/gymnastique_hommes.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 6",
@@ -64,7 +68,8 @@
                 "nom": "Natation 400m hommes",
                 "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
                 "description": "Epreuve de 400m 4 nages pour les hommes",
-                "image": "chemin/vers/image/stade.jpg",
+                "image_lieu": "chemin/vers/image/piscine.jpg",
+                "image_epreuve": "chemin/vers/image/natation_homme.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 4",
@@ -81,7 +86,8 @@
                 "nom": "Natation 50m femmes",
                 "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
                 "description": "Epreuve de 50m nage libre pour les femmes",
-                "image": "chemin/vers/image/stade.jpg",
+                "image_lieu": "chemin/vers/image/piscine.jpg",
+                "image_epreuve": "chemin/vers/image/natation_femme.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 4",
@@ -98,7 +104,8 @@
                 "nom": "Demi-Finale USA/Espagne",
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Demi-Finale de basketball opposant les Etats-Unis à l'Espagne",
-                "image": "chemin/vers/image/basket.jpg",
+                "image_lieu": "chemin/vers/image/bercy_arena.jpg",
+                "image_epreuve": "chemin/vers/image/basket_USA_Espagne.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -112,7 +119,8 @@
                 "nom": "Demi-Finale France/Australie",
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Demi-Finale de basketball opposant la France à l'Australie",
-                "image": "chemin/vers/image/basket.jpg",
+                "image_lieu": "chemin/vers/image/bercy_arena.jpg",
+                "image_epreuve": "chemin/vers/image/basket_france_australie.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -126,7 +134,8 @@
                 "nom": "Finale France/USA",
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Finale de basketball opposant la France aux Etats-Unis",
-                "image": "chemin/vers/image/basket.jpg",
+                "image_lieu": "chemin/vers/image/bercy_arena.jpg",
+                "image_epreuve": "chemin/vers/image/basket_france_usa.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -140,7 +149,8 @@
                 "nom": "Taekwondo hommes -80kg",
                 "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
                 "description": "Epreuve de Taekwondo pour les hommes de moins de 80kg",
-                "image": "chemin/vers/image/taekwondo.jpg",
+                "image_lieu": "chemin/vers/image/grand_palais.jpg",
+                "image_epreuve": "chemin/vers/image/taekwondo_hommes.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 9",
@@ -155,7 +165,8 @@
                 "nom": "Taekwondo femmes +67kg",
                 "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
                 "description": "Epreuve de Taekwondo pour les femmes de plus de 67kg",
-                "image": "chemin/vers/image/taekwondo.jpg",
+                "image_lieu": "chemin/vers/image/grand_palais.jpg",
+                "image_epreuve": "chemin/vers/image/taekwondo_femmes.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 9",
@@ -170,7 +181,8 @@
                 "nom": "Poursuite par équipe hommes (cyclisme)",
                 "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
                 "description": "Epreuve de cyclisme par équipe pour les hommes",
-                "image": "chemin/vers/image/velodrome.jpg",
+                "image_lieu": "chemin/vers/image/velodrome.jpg",
+                "image_epreuve": "chemin/vers/image/poursuite_homme.jpg",
                 "transports": [
                     "Ligne 4",
                     "Ligne 12"
@@ -184,7 +196,8 @@
                 "nom": "Keirin femmes (cyclisme)",
                 "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
                 "description": "Epreuve de cyclisme pour les femmes",
-                "image": "chemin/vers/image/velodrome.jpg",
+                "image_lieu": "chemin/vers/image/velodrome.jpg",
+                "image_epreuve": "chemin/vers/image/keirin_femmes.jpg",
                 "transports": [
                     "Ligne 4",
                     "Ligne 12"
@@ -198,7 +211,8 @@
                 "nom": "Tir à l'arc individuel hommes",
                 "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de tir à l'arc pour les hommes",
-                "image": "chemin/vers/image/parc_expositions.jpg",
+                "image_lieu": "chemin/vers/image/parc_expositions.jpg",
+                "image_epreuve": "chemin/vers/image/tir_arc_hommes.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -211,7 +225,8 @@
                 "nom": "Tir à l'arc par équipe femmes",
                 "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de tir à l'arc pour les hommes",
-                "image": "chemin/vers/image/parc_expositions.jpg",
+                "image_lieu": "chemin/vers/image/parc_expositions.jpg",
+                "image_epreuve": "chemin/vers/image/tir_arc_femmes.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -224,7 +239,8 @@
                 "nom": "Boxe poids légers hommes",
                 "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de boxe pour les hommes de moins de 60kg",
-                "image": "chemin/vers/image/palais_sports.jpg",
+                "image_lieu": "chemin/vers/image/palais_sports.jpg",
+                "image_epreuve": "chemin/vers/image/boxe_hommes.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -237,7 +253,8 @@
                 "nom": "Boxe poids moyen femmes",
                 "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de boxe pour les femmes de moins de 60kg",
-                "image": "chemin/vers/image/palais_sports.jpg",
+                "image_lieu": "chemin/vers/image/palais_sports.jpg",
+                "image_epreuve": "chemin/vers/image/boxe_femmes.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -250,7 +267,8 @@
                 "nom": "Saut d'obstacles par équipe hommes (équitation)",
                 "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
                 "description": "Epreuve de saut d'obstacles par équipe pour les hommes",
-                "image": "chemin/vers/image/hippodrome.jpg",
+                "image_lieu": "chemin/vers/image/hippodrome.jpg",
+                "image_epreuve": "chemin/vers/image/saut_obstacles_hommes.jpg",
                 "transports": [
                     "Ligne 4",
                     "Rer B"
@@ -264,7 +282,8 @@
                 "nom": "Dressage individuel femmes (équitation)",
                 "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
                 "description": "Epreuve de dressage individuel pour les femmes",
-                "image": "chemin/vers/image/hippodrome.jpg",
+                "image_lieu": "chemin/vers/image/hippodrome.jpg",
+                "image_epreuve": "chemin/vers/image/dressage_femmes.jpg",
                 "transports": [
                     "Bus 261",
                     "Bus 70",
@@ -279,7 +298,8 @@
                 "nom": "Finale Escrime France/Russie hommes",
                 "adresse": "Gymnase Buffault, 26 Rue Buffault, Paris",
                 "description": "Finale d'escrime par equipe opposant la France à la Russie",
-                "image": "chemin/vers/image/escrime.jpg",
+                "image_lieu": "chemin/vers/image/gymnase_buffault.jpg",
+                "image_epreuve": "chemin/vers/image/escrime_france_russie.jpg",
                 "transports": [
                     "Ligne 7",
                     "Ligne 9",
@@ -292,11 +312,11 @@
         ],
         "Restaurants": [
             {
-                "id": 1,
+                "id": 21,
                 "nom": "Le Gourmet Parisien",
                 "adresse": "789 Rue de la Gastronomie, Paris",
                 "description": "Cuisine française traditionnelle",
-                "image": "chemin/vers/image/gourmet.jpg",
+                "image": "chemin/vers/image/francais.jpg",
                 "transports": [
                     "Ligne 7",
                     "Ligne 10"
@@ -310,11 +330,11 @@
                 ]
             },
             {
-                "id": 2,
+                "id": 22,
                 "nom": "Dragon d'Or",
                 "adresse": "123 Rue de Chine, Paris",
                 "description": "Spécialités chinoises authentiques",
-                "image": "chemin/vers/image/dragon.jpg",
+                "image": "chemin/vers/image/chinois.jpg",
                 "transports": [
                     "Ligne 5",
                     "Ligne 7"
@@ -328,11 +348,11 @@
                 ]
             },
             {
-                "id": 3,
+                "id": 23,
                 "nom": "Tokyo Sushi",
                 "adresse": "456 Rue du Japon, Paris",
                 "description": "Sushi et cuisine japonaise raffinée",
-                "image": "chemin/vers/image/tokyo.jpg",
+                "image": "chemin/vers/image/japonais.jpg",
                 "specialite": "Cuisine japonaise",
                 "plageHoraire": "10:00 - 23:00",
                 "transports": [
@@ -346,11 +366,11 @@
                 ]
             },
             {
-                "id": 4,
+                "id": 24,
                 "nom": "Séoul Gourmet",
                 "adresse": "789 Rue de Corée, Paris",
                 "description": "Le meilleur de la cuisine coréenne",
-                "image": "chemin/vers/image/seoul.jpg",
+                "image": "chemin/vers/image/coreen.jpg",
                 "specialite": "Cuisine coréenne",
                 "plageHoraire": "11:30 - 21:00",
                 "transports": [
@@ -364,11 +384,11 @@
                 ]
             },
             {
-                "id": 5,
+                "id": 25,
                 "nom": "Delhi Délices",
                 "adresse": "321 Rue de l'Inde, Paris",
                 "description": "Saveurs indiennes épicées et traditionnelles",
-                "image": "chemin/vers/image/delhi.jpg",
+                "image": "chemin/vers/image/indien.jpg",
                 "specialite": "Cuisine indienne",
                 "plageHoraire": "12:00 - 22:00",
                 "transports": [
@@ -382,11 +402,11 @@
                 ]
             },
             {
-                "id": 6,
+                "id": 26,
                 "nom": "Roma Pasta",
                 "adresse": "654 Rue d'Italie, Paris",
                 "description": "Pâtes italiennes faites maison et pizzas",
-                "image": "chemin/vers/image/roma.jpg",
+                "image": "chemin/vers/image/italien.jpg",
                 "specialite": "Cuisine italienne",
                 "plageHoraire": "11:00 - 24:00",
                 "transports": [
@@ -400,11 +420,11 @@
                 ]
             },
             {
-                "id": 7,
+                "id": 27,
                 "nom": "Azteca Mexicano",
                 "adresse": "987 Rue du Mexique, Paris",
                 "description": "Authentique cuisine mexicaine et tacos",
-                "image": "chemin/vers/image/azteca.jpg",
+                "image": "chemin/vers/image/mexicain.jpg",
                 "specialite": "Cuisine mexicaine",
                 "plageHoraire": "13:00 - 23:00",
                 "transports": [
