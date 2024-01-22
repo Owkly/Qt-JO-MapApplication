@@ -1,14 +1,39 @@
 TEMPLATE = app
-TARGET = Map_JO
+TARGET = Projet_Jeux_Olympiques
 INCLUDEPATH += .
 
+# INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5/QtLocation
+# LIBS += -L/usr/lib/x86_64-linux-gnu/qt5/QtLocation/lib -lQt5Location
+
+
 # Ajouter les modules Qt nécessaires
-QT += core gui widgets
+QT += core gui widgets 
+# quick location quickwidgets positioning
 
-#Input
+# Input
 
-HEADERS += $$PWD/headers/*.hpp
-SOURCES += $$PWD/src/*.cpp
+# HEADERS += $$PWD/headers/*.hpp
+# SOURCES += $$PWD/src/*.cpp
 
 # List of resource files
-RESOURCES += resources.qrc
+# RESOURCES += resources.qrc
+
+
+
+SOURCES += \
+    main.cpp \
+    mainwindow.cpp
+    # Ajoutez d'autres fichiers sources (.cpp) ici si nécessaire
+
+HEADERS += \
+    mainwindow.hpp \
+    lieu.hpp \
+    epreuve.hpp
+    # Ajoutez d'autres en-têtes (.h) ici si nécessaire
+
+FORMS += \
+    mainwindow.ui
+
+
+# List of resource files
+RESOURCES += ressources.qrc
