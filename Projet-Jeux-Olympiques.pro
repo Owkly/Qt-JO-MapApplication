@@ -32,7 +32,8 @@ HEADERS += \
     # Ajoutez d'autres en-têtes (.h) ici si nécessaire
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    test.ui
 
 
 # List of resource files

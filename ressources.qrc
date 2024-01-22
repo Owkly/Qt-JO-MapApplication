@@ -1,6 +1,7 @@
 <RCC>
-    <qresource prefix="/images">
+    <qresource>
         <file>images/image.png</file>
         <file>images/france-eiffel-tower-paris.jpg</file>
+        <file>images/basket.jpg</file>
     </qresource>
 </RCC>

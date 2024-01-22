@@ -1,7 +1,6 @@
 // Epreuve.hpp
 #pragma once
 #include "lieu.hpp"
-#include <QDateTime>
 
 class Epreuve : public Lieu {
 public:

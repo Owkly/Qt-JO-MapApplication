@@ -3,6 +3,7 @@
 #include <QString>
 #include <QPixmap>
 #include <QVector>
+#include <QDateTime>
 
 class Lieu {
 public:
