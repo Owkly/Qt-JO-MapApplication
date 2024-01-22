@@ -4,7 +4,7 @@
             {
                 "id": 1,
                 "nom": "100m femmes",
-                "adresse": "Plaine St-Denis, 93210, St-Ouen",
+                "adresse": "Stade de France, Plaine St-Denis, 93210, St-Ouen",
                 "description": "100m d'athlétisme pour les femmes",
                 "image_lieu": "chemin/vers/image/stade_de_france.jpg",
                 "image_epreuve": "chemin/vers/image/100m.jpg",
@@ -14,7 +14,7 @@
                 ],
                 "horaireDebut": "2024-07-25T11:00:00",
                 "prixBillet": 50.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [22]
             },
             {
                 "id": 2,
@@ -29,7 +29,7 @@
                 ],
                 "horaireDebut": "2024-07-25T21:00:00",
                 "prixBillet": 65.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [22]
             },
             {
                 "id": 3,
@@ -45,7 +45,7 @@
                 ],
                 "horaireDebut": "2024-07-23T09:15:00",
                 "prixBillet": 130.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [23,25]
             },
             {
                 "id": 4,
@@ -61,7 +61,7 @@
                 ],
                 "horaireDebut": "2024-07-24T10:00:00",
                 "prixBillet": 160.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [23,25]
             },
             {
                 "id": 5,
@@ -79,7 +79,7 @@
                 ],
                 "horaireDebut": "2024-07-26T15:00:00",
                 "prixBillet": 80.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [21,28]
             },
             {
                 "id": 6,
@@ -97,7 +97,7 @@
                 ],
                 "horaireDebut": "2024-07-26T16:30:00",
                 "prixBillet": 40.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [21,28]
             },
             {
                 "id": 7,
@@ -112,7 +112,7 @@
                 ],
                 "horaireDebut": "2024-07-27T18:00:00",
                 "prixBillet": 160.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [23,25]
             },
             {
                 "id": 8,
@@ -127,7 +127,7 @@
                 ],
                 "horaireDebut": "2024-07-27T21:00:00",
                 "prixBillet": 160.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [23,25]
             },
             {
                 "id": 9,
@@ -142,7 +142,7 @@
                 ],
                 "horaireDebut": "2024-07-28T21:00:00",
                 "prixBillet": 320.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [23,25]
             },
             {
                 "id": 10,
@@ -158,7 +158,7 @@
                 ],
                 "horaireDebut": "2024-07-24T09:00:00",
                 "prixBillet": 75.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [21,28]
             },
             {
                 "id": 11,
@@ -174,7 +174,7 @@
                 ],
                 "horaireDebut": "2024-07-24T18:00:00",
                 "prixBillet": 75.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [21,28]
             },
             {
                 "id": 12,
@@ -189,7 +189,7 @@
                 ],
                 "horaireDebut": "2024-07-27T14:00:00",
                 "prixBillet": 70.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [27]
             },
             {
                 "id": 13,
@@ -204,7 +204,7 @@
                 ],
                 "horaireDebut": "2024-07-28T10:30:00",
                 "prixBillet": 50.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [27]
             },
             {
                 "id": 14,
@@ -218,7 +218,7 @@
                 ],
                 "horaireDebut": "2024-07-24T09:00:00",
                 "prixBillet": 45.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 15,
@@ -232,7 +232,7 @@
                 ],
                 "horaireDebut": "2024-07-25T14:30:00",
                 "prixBillet": 55.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 16,
@@ -246,7 +246,7 @@
                 ],
                 "horaireDebut": "2024-07-23T17:00:00",
                 "prixBillet": 75.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 17,
@@ -260,7 +260,7 @@
                 ],
                 "horaireDebut": "2024-07-26T19:30:00",
                 "prixBillet": 85.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 18,
@@ -275,7 +275,7 @@
                 ],
                 "horaireDebut": "2024-07-27T10:00:00",
                 "prixBillet": 70.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 19,
@@ -291,7 +291,7 @@
                 ],
                 "horaireDebut": "2024-07-28T14:30:00",
                 "prixBillet": 60.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [24,26]
             },
             {
                 "id": 20,
@@ -307,7 +307,7 @@
                 ],
                 "horaireDebut": "2024-07-24T13:00:00",
                 "prixBillet": 75.00,
-                "proximiteRestaurant": []
+                "proximiteRestaurant": [21,28]
             }
         ],
         "Restaurants": [
@@ -318,15 +318,20 @@
                 "description": "Cuisine française traditionnelle",
                 "image": "chemin/vers/image/francais.jpg",
                 "transports": [
+                    "Ligne 1",
+                    "Ligne 4",
                     "Ligne 7",
-                    "Ligne 10"
+                    "Ligne 9",
+                    "Ligne 11",
+                    "Ligne 12",
+                    "Ligne 13",
+                    "Ligne 14"
+
                 ],
                 "plageHoraire": "12:00 - 23:00",
                 "specialite": "Cuisine française",
-                "proximiteEpreuve": [
-                    1,
-                    3,
-                    5
+                "proximiteEpreuve": [ 5, 6, 10, 11, 20
+
                 ]
             },
             {
@@ -336,15 +341,13 @@
                 "description": "Spécialités chinoises authentiques",
                 "image": "chemin/vers/image/chinois.jpg",
                 "transports": [
-                    "Ligne 5",
-                    "Ligne 7"
+                    "Ligne 4",
+                    "Rer B"
                 ],
                 "plageHoraire": "11:00 - 22:00",
                 "specialite": "Cuisine chinoise",
                 "proximiteEpreuve": [
-                    2,
-                    4,
-                    6
+                    1,2
                 ]
             },
             {
@@ -356,13 +359,15 @@
                 "specialite": "Cuisine japonaise",
                 "plageHoraire": "10:00 - 23:00",
                 "transports": [
-                    "Ligne 8",
-                    "Ligne 9"
+                    "Ligne 1",
+                    "Ligne 14"
                 ],
                 "proximiteEpreuves": [
-                    1,
+                    3,
+                    4,
                     7,
-                    8
+                    8,
+                    9
                 ]
             },
             {
@@ -374,13 +379,16 @@
                 "specialite": "Cuisine coréenne",
                 "plageHoraire": "11:30 - 21:00",
                 "transports": [
-                    "Ligne 3",
-                    "Ligne 11"
+                    "Ligne 4",
+                    "Ligne 12",
+                    "Rer B"
                 ],
                 "proximiteEpreuves": [
-                    5,
-                    9,
-                    10
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
                 ]
             },
             {
@@ -392,13 +400,15 @@
                 "specialite": "Cuisine indienne",
                 "plageHoraire": "12:00 - 22:00",
                 "transports": [
-                    "Ligne 4",
-                    "Ligne 12"
+                    "Ligne 1",
+                    "Ligne 14"
                 ],
                 "proximiteEpreuves": [
                     3,
-                    9,
-                    8
+                    4,
+                    7,
+                    8,
+                    9
                 ]
             },
             {
@@ -410,13 +420,16 @@
                 "specialite": "Cuisine italienne",
                 "plageHoraire": "11:00 - 24:00",
                 "transports": [
-                    "Ligne 10",
-                    "Ligne 13"
+                    "Ligne 4",
+                    "Ligne 12",
+                    "Rer B"
                 ],
                 "proximiteEpreuves": [
-                    2,
-                    3,
-                    10
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
                 ]
             },
             {
@@ -428,15 +441,41 @@
                 "specialite": "Cuisine mexicaine",
                 "plageHoraire": "13:00 - 23:00",
                 "transports": [
-                    "Ligne 6",
+                    "Ligne 4",
+                    "Ligne 12"
+                ],
+                "proximiteEpreuves": [
+                    12,
+                    13
+                ]
+            },
+            {
+                "id": 28,
+                "nom": "Athènes Grill",
+                "adresse": "741 Rue de Grèce, Paris",
+                "description": "Cuisine grecque traditionnelle",
+                "image": "chemin/vers/image/grec.jpg",
+                "specialite": "Cuisine grecque",
+                "plageHoraire": "12:00 - 22:00",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 4",
+                    "Ligne 7",
+                    "Ligne 9",
+                    "Ligne 11",
+                    "Ligne 12",
+                    "Ligne 13",
                     "Ligne 14"
                 ],
                 "proximiteEpreuves": [
-                    4,
                     5,
-                    7
+                    6,
+                    10,
+                    11,
+                    20
                 ]
             }
-        ]
+
+        ]   
     }
 }
