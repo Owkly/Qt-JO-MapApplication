@@ -33,7 +33,6 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui \
-    test.ui
 
 
 # List of resource files

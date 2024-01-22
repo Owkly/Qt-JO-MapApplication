@@ -3,5 +3,6 @@
         <file>images/image.png</file>
         <file>images/france-eiffel-tower-paris.jpg</file>
         <file>images/basket.jpg</file>
+        <file>lieux.json</file> 
     </qresource>
 </RCC>

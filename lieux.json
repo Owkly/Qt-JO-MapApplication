@@ -1,0 +1,422 @@
+{
+    "lieux": {
+        "Epreuves": [
+            {
+                "id": 1,
+                "nom": "100m femmes",
+                "adresse": "Plaine St-Denis, 93210, St-Ouen",
+                "description": "100m d'athlétisme pour les femmes",
+                "image": "chemin/vers/image/stade.jpg",
+                "transports": [
+                    "Ligne 4",
+                    "Rer B"
+                ],
+                "horaireDebut": "2024-07-25T11:00:00",
+                "prixBillet": 50.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 2,
+                "nom": "Rugby hommes",
+                "adresse": "Stade de France, Plaine St-Denis, 93210, St-Ouen",
+                "description": "Match de rugby opposant la France à l'Australie",
+                "image": "chemin/vers/image/stade.jpg",
+                "transports": [
+                    "Ligne 4",
+                    "Rer B"
+                ],
+                "horaireDebut": "2024-07-25T21:00:00",
+                "prixBillet": 65.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 3,
+                "nom": "Gymnastique Artistique Individuelle Femmes",
+                "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
+                "description": "Epreuves de gymnastiques individuelles pour les femmes",
+                "image": "chemin/vers/image/gymnastique_femmes.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 6",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-23T09:15:00",
+                "prixBillet": 130.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 4,
+                "nom": "Gymnastique Artistique Equipe Hommes",
+                "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
+                "description": "Epreuve de gymnastique par équipe pour les hommes",
+                "image": "chemin/vers/image/gymnastique_hommes.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 6",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-24T10:00:00",
+                "prixBillet": 160.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 5,
+                "nom": "Natation 400m hommes",
+                "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
+                "description": "Epreuve de 400m 4 nages pour les hommes",
+                "image": "chemin/vers/image/stade.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 4",
+                    "Ligne 7",
+                    "Ligne 11",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-26T15:00:00",
+                "prixBillet": 80.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 6,
+                "nom": "Natation 50m femmes",
+                "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
+                "description": "Epreuve de 50m nage libre pour les femmes",
+                "image": "chemin/vers/image/stade.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 4",
+                    "Ligne 7",
+                    "Ligne 11",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-26T16:30:00",
+                "prixBillet": 40.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 7,
+                "nom": "Demi-Finale USA/Espagne",
+                "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
+                "description": "Match de Demi-Finale de basketball opposant les Etats-Unis à l'Espagne",
+                "image": "chemin/vers/image/basket.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-27T18:00:00",
+                "prixBillet": 160.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 8,
+                "nom": "Demi-Finale France/Australie",
+                "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
+                "description": "Match de Demi-Finale de basketball opposant la France à l'Australie",
+                "image": "chemin/vers/image/basket.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-27T21:00:00",
+                "prixBillet": 160.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 9,
+                "nom": "Finale France/USA",
+                "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
+                "description": "Match de Finale de basketball opposant la France aux Etats-Unis",
+                "image": "chemin/vers/image/basket.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 14"
+                ],
+                "horaireDebut": "2024-07-28T21:00:00",
+                "prixBillet": 320.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 10,
+                "nom": "Taekwondo hommes -80kg",
+                "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
+                "description": "Epreuve de Taekwondo pour les hommes de moins de 80kg",
+                "image": "chemin/vers/image/taekwondo.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 9",
+                    "Ligne 13"
+                ],
+                "horaireDebut": "2024-07-24T09:00:00",
+                "prixBillet": 75.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 11,
+                "nom": "Taekwondo femmes +67kg",
+                "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
+                "description": "Epreuve de Taekwondo pour les femmes de plus de 67kg",
+                "image": "chemin/vers/image/taekwondo.jpg",
+                "transports": [
+                    "Ligne 1",
+                    "Ligne 9",
+                    "Ligne 13"
+                ],
+                "horaireDebut": "2024-07-24T18:00:00",
+                "prixBillet": 75.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 12,
+                "nom": "Poursuite par équipe hommes (cyclisme)",
+                "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
+                "description": "Epreuve de cyclisme par équipe pour les hommes",
+                "image": "chemin/vers/image/velodrome.jpg",
+                "transports": [
+                    "Ligne 4",
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-27T14:00:00",
+                "prixBillet": 70.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 13,
+                "nom": "Keirin femmes (cyclisme)",
+                "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
+                "description": "Epreuve de cyclisme pour les femmes",
+                "image": "chemin/vers/image/velodrome.jpg",
+                "transports": [
+                    "Ligne 4",
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-28T10:30:00",
+                "prixBillet": 50.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 14,
+                "nom": "Tir à l'arc individuel hommes",
+                "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
+                "description": "Epreuve de tir à l'arc pour les hommes",
+                "image": "chemin/vers/image/parc_expositions.jpg",
+                "transports": [
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-24T09:00:00",
+                "prixBillet": 45.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 15,
+                "nom": "Tir à l'arc par équipe femmes",
+                "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
+                "description": "Epreuve de tir à l'arc pour les hommes",
+                "image": "chemin/vers/image/parc_expositions.jpg",
+                "transports": [
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-25T14:30:00",
+                "prixBillet": 55.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 16,
+                "nom": "Boxe poids légers hommes",
+                "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
+                "description": "Epreuve de boxe pour les hommes de moins de 60kg",
+                "image": "chemin/vers/image/palais_sports.jpg",
+                "transports": [
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-23T17:00:00",
+                "prixBillet": 75.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 17,
+                "nom": "Boxe poids moyen femmes",
+                "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
+                "description": "Epreuve de boxe pour les femmes de moins de 60kg",
+                "image": "chemin/vers/image/palais_sports.jpg",
+                "transports": [
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-26T19:30:00",
+                "prixBillet": 85.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 18,
+                "nom": "Saut d'obstacles par équipe hommes (équitation)",
+                "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
+                "description": "Epreuve de saut d'obstacles par équipe pour les hommes",
+                "image": "chemin/vers/image/hippodrome.jpg",
+                "transports": [
+                    "Ligne 4",
+                    "Rer B"
+                ],
+                "horaireDebut": "2024-07-27T10:00:00",
+                "prixBillet": 70.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 19,
+                "nom": "Dressage individuel femmes (équitation)",
+                "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
+                "description": "Epreuve de dressage individuel pour les femmes",
+                "image": "chemin/vers/image/hippodrome.jpg",
+                "transports": [
+                    "Bus 261",
+                    "Bus 70",
+                    "Ligne 9"
+                ],
+                "horaireDebut": "2024-07-28T14:30:00",
+                "prixBillet": 60.00,
+                "proximiteRestaurant": []
+            },
+            {
+                "id": 20,
+                "nom": "Finale Escrime France/Russie hommes",
+                "adresse": "Gymnase Buffault, 26 Rue Buffault, Paris",
+                "description": "Finale d'escrime par equipe opposant la France à la Russie",
+                "image": "chemin/vers/image/escrime.jpg",
+                "transports": [
+                    "Ligne 7",
+                    "Ligne 9",
+                    "Ligne 12"
+                ],
+                "horaireDebut": "2024-07-24T13:00:00",
+                "prixBillet": 75.00,
+                "proximiteRestaurant": []
+            }
+        ],
+        "Restaurants": [
+            {
+                "id": 1,
+                "nom": "Le Gourmet Parisien",
+                "adresse": "789 Rue de la Gastronomie, Paris",
+                "description": "Cuisine française traditionnelle",
+                "image": "chemin/vers/image/gourmet.jpg",
+                "transports": [
+                    "Ligne 7",
+                    "Ligne 10"
+                ],
+                "plageHoraire": "12:00 - 23:00",
+                "specialite": "Cuisine française",
+                "proximiteEpreuve": [
+                    1,
+                    3,
+                    5
+                ]
+            },
+            {
+                "id": 2,
+                "nom": "Dragon d'Or",
+                "adresse": "123 Rue de Chine, Paris",
+                "description": "Spécialités chinoises authentiques",
+                "image": "chemin/vers/image/dragon.jpg",
+                "transports": [
+                    "Ligne 5",
+                    "Ligne 7"
+                ],
+                "plageHoraire": "11:00 - 22:00",
+                "specialite": "Cuisine chinoise",
+                "proximiteEpreuve": [
+                    2,
+                    4,
+                    6
+                ]
+            },
+            {
+                "id": 3,
+                "nom": "Tokyo Sushi",
+                "adresse": "456 Rue du Japon, Paris",
+                "description": "Sushi et cuisine japonaise raffinée",
+                "image": "chemin/vers/image/tokyo.jpg",
+                "specialite": "Cuisine japonaise",
+                "plageHoraire": "10:00 - 23:00",
+                "transports": [
+                    "Ligne 8",
+                    "Ligne 9"
+                ],
+                "proximiteEpreuves": [
+                    1,
+                    7,
+                    8
+                ]
+            },
+            {
+                "id": 4,
+                "nom": "Séoul Gourmet",
+                "adresse": "789 Rue de Corée, Paris",
+                "description": "Le meilleur de la cuisine coréenne",
+                "image": "chemin/vers/image/seoul.jpg",
+                "specialite": "Cuisine coréenne",
+                "plageHoraire": "11:30 - 21:00",
+                "transports": [
+                    "Ligne 3",
+                    "Ligne 11"
+                ],
+                "proximiteEpreuves": [
+                    5,
+                    9,
+                    10
+                ]
+            },
+            {
+                "id": 5,
+                "nom": "Delhi Délices",
+                "adresse": "321 Rue de l'Inde, Paris",
+                "description": "Saveurs indiennes épicées et traditionnelles",
+                "image": "chemin/vers/image/delhi.jpg",
+                "specialite": "Cuisine indienne",
+                "plageHoraire": "12:00 - 22:00",
+                "transports": [
+                    "Ligne 4",
+                    "Ligne 12"
+                ],
+                "proximiteEpreuves": [
+                    3,
+                    9,
+                    8
+                ]
+            },
+            {
+                "id": 6,
+                "nom": "Roma Pasta",
+                "adresse": "654 Rue d'Italie, Paris",
+                "description": "Pâtes italiennes faites maison et pizzas",
+                "image": "chemin/vers/image/roma.jpg",
+                "specialite": "Cuisine italienne",
+                "plageHoraire": "11:00 - 24:00",
+                "transports": [
+                    "Ligne 10",
+                    "Ligne 13"
+                ],
+                "proximiteEpreuves": [
+                    2,
+                    3,
+                    10
+                ]
+            },
+            {
+                "id": 7,
+                "nom": "Azteca Mexicano",
+                "adresse": "987 Rue du Mexique, Paris",
+                "description": "Authentique cuisine mexicaine et tacos",
+                "image": "chemin/vers/image/azteca.jpg",
+                "specialite": "Cuisine mexicaine",
+                "plageHoraire": "13:00 - 23:00",
+                "transports": [
+                    "Ligne 6",
+                    "Ligne 14"
+                ],
+                "proximiteEpreuves": [
+                    4,
+                    5,
+                    7
+                ]
+            }
+        ]
+    }
+}
