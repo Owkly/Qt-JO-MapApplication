@@ -24,7 +24,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
 	dataManager.cpp \
-    detailedwindow.cpp
+    secondWindow.cpp \
+
     # Ajoutez d'autres fichiers sources (.cpp) ici si nécessaire
 
 HEADERS += \
@@ -32,12 +33,13 @@ HEADERS += \
     lieu.hpp \
     epreuve.hpp \
 	dataManager.hpp \
-    detailedwindow.hpp
+    secondWindow.hpp \
+
     # Ajoutez d'autres en-têtes (.h) ici si nécessaire
 
 FORMS += \
     mainwindow.ui \
-    detailedwindow.ui
+
 
 # List of resource files
 RESOURCES += ressources.qrc
