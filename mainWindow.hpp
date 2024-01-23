@@ -1,6 +1,6 @@
 // #pragma once
 
-// #include "ui_mainwindow.h"
+// #include "ui_mainWindow.h"
 
 // #include <QMainWindow>
 // #include <QScrollArea>

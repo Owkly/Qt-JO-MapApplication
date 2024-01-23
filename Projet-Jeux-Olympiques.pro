@@ -10,36 +10,12 @@ INCLUDEPATH += .
 QT += core gui widgets 
 # quick location quickwidgets positioning
 
-# Input
 
-# HEADERS += $$PWD/headers/*.hpp
-# SOURCES += $$PWD/src/*.cpp
+SOURCES += *.cpp
 
-# List of resource files
-# RESOURCES += resources.qrc
+HEADERS += *.hpp
 
-
-
-SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-	dataManager.cpp \
-    secondWindow.cpp \
-
-    # Ajoutez d'autres fichiers sources (.cpp) ici si nécessaire
-
-HEADERS += \
-    mainwindow.hpp \
-    lieu.hpp \
-    epreuve.hpp \
-	dataManager.hpp \
-    secondWindow.hpp \
-
-    # Ajoutez d'autres en-têtes (.h) ici si nécessaire
-
-FORMS += \
-    mainwindow.ui \
-
+FORMS += *.ui
 
 # List of resource files
 RESOURCES += ressources.qrc

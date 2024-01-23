@@ -1,13 +1,12 @@
-# ignorer le dossier .vscode
 .vscode
 guide.md
 sujet.pdf
 .qmake.stash
 Makefile
 qrc_ressources.cpp
-moc_mainwindow.cpp
-moc_predefs.h
-ui_mainwindow.h
-*.user
+moc_*
+ui_*
 *.o
+*.user
 Projet_Jeux_Olympiques
+

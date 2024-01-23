@@ -13,7 +13,7 @@
 // }
 
 
-#include "mainwindow.hpp"
+#include "mainWindow.hpp"
 #include "secondWindow.hpp"
 
 
