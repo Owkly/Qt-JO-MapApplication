@@ -1,46 +1,15 @@
 #include "mainwindow.hpp"
 #include "epreuve.hpp"
+#include "restaurant.hpp"
 
 #include <QApplication>
+#include <QPixmap>
+
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QPixmap>
-
-// int main(int argc, char *argv[])
-// {
-//     QApplication a(argc, argv);
-//     // Initialisation d'une Epreuve
-//     // QPixmap imageBasket("/home/weikai/Téléchargements/basket.jpg"); // Assurez-vous que le chemin est correct
-//     QPixmap imageBasket("images/basket.jpg"); // Assurez-vous que le chemin est correct
-//     QVector<QString> lignesMetroBasket;
-//     lignesMetroBasket.append("1");  // Ajoute la ligne de métro "1"
-//     lignesMetroBasket.append("14"); // Ajoute la ligne de métro "14"
-//     // Créez une date et une heure pour l'épreuve
-//     QDateTime horaireBasket = QDateTime::fromString("2024-07-24T09:00:00", Qt::ISODate);
-
-//     Epreuve basket(1, "100m femmes", horaireBasket, 50.0,
-//                    "Stade de France", "Stade principal pour les épreuves d'athlétisme et de rugby",
-//                    imageBasket, lignesMetroBasket);
-//     Epreuve foot(2, "100m hommes", horaireBasket, 50.0,
-//                  "Stade de France", "Stade principal pour les épreuves d'athlétisme et de rugby",
-//                  imageBasket, lignesMetroBasket);
-
-//     QList<Epreuve> epreuves;
-//     epreuves.append(basket);
-//     epreuves.append(foot);
-//     epreuves.append(basket);
-//     epreuves.append(foot);
-//     epreuves.append(basket);
-//     epreuves.append(foot);
-
-//     MainWindow w;
-//     w.setEpreuve(basket);
-//     w.afficherEpreuves(epreuves);
-//     w.show();
-//     return a.exec();
-// }
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -59,58 +28,70 @@ int main(int argc, char *argv[])
     QWidget *scrollWidget = new QWidget;
     QVBoxLayout *scrollLayout = new QVBoxLayout(scrollWidget);
 
-    // Liste d'épreuves (exemple avec des données fictives)
-    QList<Epreuve> listeEpreuves;
+        QFile file("lieux.json");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Impossible d'ouvrir le fichier pour la lecture.";
+        return -1;
+    }
 
-    // Épreuve 1
-    QDateTime horaire1 = QDateTime::fromString("2024-07-24T09:00:00", Qt::ISODate);
-    QPixmap image1(":/images/basket.jpg");
-    QVector<QString> lignesMetro1 = {"Ligne 1", "Ligne 14"};
-    Epreuve epreuve1(1, "100m femmes", horaire1, 50.0,
-                     "Stade de France", "Stade principal pour les épreuves d'athlétisme et de rugby",
-                     image1, lignesMetro1);
-    listeEpreuves.append(epreuve1);
+    QString jsonText = file.readAll();
+    file.close();
 
-    // Épreuve 2
-    QDateTime horaire2 = QDateTime::fromString("2024-07-25T11:30:00", Qt::ISODate);
-    QPixmap image2(":/images/basket.jpg");
-    QVector<QString> lignesMetro2 = {"Ligne 2", "Ligne 8"};
-    Epreuve epreuve2(2, "200m hommes", horaire2, 45.0,
-                     "Stade Olympique", "Stade principal pour les épreuves d'athlétisme",
-                     image2, lignesMetro2);
-    listeEpreuves.append(epreuve2);
+    QJsonDocument document = QJsonDocument::fromJson(jsonText.toUtf8());
+    QJsonObject rootObject = document.object();
+    QJsonObject lieux = rootObject["lieux"].toObject();
 
-    // Épreuve 2
-    QDateTime horaire3 = QDateTime::fromString("2024-07-25T11:30:00", Qt::ISODate);
-    QPixmap image3(":/images/basket.jpg");
-    QVector<QString> lignesMetro3 = {"Ligne 2", "Ligne 8"};
-    Epreuve epreuve3(2, "200m hommes", horaire3, 45.0,
-                     "Stade Olympique", "Stade principal pour les épreuves d'athlétisme",
-                     image3, lignesMetro3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
+    QVector<Epreuve> listeEpreuves;
+    QVector<Restaurant> listeRestaurants;
 
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
+    // Traiter les épreuves
+    QJsonArray epreuves = lieux["Epreuves"].toArray();
+    for (const auto &value : epreuves) {
+        QJsonObject epreuveObj = value.toObject();
 
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
+        QVector<int> proximiteRestaurants;
+        for (const auto &idVariant : epreuveObj["proximiteRestaurant"].toArray()) {
+            proximiteRestaurants.append(idVariant.toInt());
+        }
 
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    listeEpreuves.append(epreuve3);
-    // ...
+        Epreuve epreuve(
+            epreuveObj["id"].toInt(),
+            epreuveObj["nom"].toString(),
+            epreuveObj["adresse"].toString(),
+            epreuveObj["description"].toString(),
+            epreuveObj["image"].toString(),
+            epreuveObj["transports"].toVariant().toStringList().toVector(),
+            QDateTime::fromString(epreuveObj["horaireDebut"].toString(), Qt::ISODate),
+            epreuveObj["prixBillet"].toDouble(),
+            proximiteRestaurants
+        );
+        listeEpreuves.append(epreuve);
+    }
+
+    // Traiter les restaurants
+    QJsonArray restaurants = lieux["Restaurants"].toArray();
+    for (const auto &value : restaurants) {
+        QJsonObject restaurantObj = value.toObject();
+
+        QVector<int> proximiteEpreuves;
+        for (const auto &idVariant : restaurantObj["proximiteEpreuves"].toArray()) {
+            proximiteEpreuves.append(idVariant.toInt());
+        }
+
+        Restaurant restaurant(
+            restaurantObj["id"].toInt(),
+            restaurantObj["nom"].toString(),
+            restaurantObj["adresse"].toString(),
+            restaurantObj["description"].toString(),
+            restaurantObj["image"].toString(),
+            restaurantObj["transports"].toVariant().toStringList().toVector(),
+            restaurantObj["plageHoraire"].toString(),
+            restaurantObj["specialite"].toString(),
+            proximiteEpreuves
+        );
+        listeRestaurants.append(restaurant);
+    }
+
 
     // Ajouter les épreuves à la liste
     for (const Epreuve &epreuve : listeEpreuves)
@@ -151,7 +132,92 @@ int main(int argc, char *argv[])
     mainWidget.setWindowTitle("Liste d'Epreuves");
     mainWidget.resize(800, 600); // Ajustez la taille selon vos besoins
     mainWidget.show();
-
+    
     return a.exec();
 
 }
+
+
+
+// int main() {
+//     QFile file("lieux.json");
+//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//         qDebug() << "Impossible d'ouvrir le fichier pour la lecture.";
+//         return -1;
+//     }
+
+//     QString jsonText = file.readAll();
+//     file.close();
+
+//     QJsonDocument document = QJsonDocument::fromJson(jsonText.toUtf8());
+//     QJsonObject rootObject = document.object();
+//     QJsonObject lieux = rootObject["lieux"].toObject();
+
+//     QVector<Epreuve> listeEpreuves;
+//     QVector<Restaurant> listeRestaurants;
+
+//     // Traiter les épreuves
+//     QJsonArray epreuves = lieux["Epreuves"].toArray();
+//     for (const auto &value : epreuves) {
+//         QJsonObject epreuveObj = value.toObject();
+
+//         QVector<int> proximiteRestaurants;
+//         for (const auto &idVariant : epreuveObj["proximiteRestaurant"].toArray()) {
+//             proximiteRestaurants.append(idVariant.toInt());
+//         }
+
+//         Epreuve epreuve(
+//             epreuveObj["id"].toInt(),
+//             epreuveObj["nom"].toString(),
+//             epreuveObj["adresse"].toString(),
+//             epreuveObj["description"].toString(),
+//             epreuveObj["image"].toString(),
+//             epreuveObj["transports"].toVariant().toStringList().toVector(),
+//             QDateTime::fromString(epreuveObj["horaireDebut"].toString(), Qt::ISODate),
+//             epreuveObj["prixBillet"].toDouble(),
+//             proximiteRestaurants
+//         );
+//         listeEpreuves.append(epreuve);
+//     }
+
+//     // Traiter les restaurants
+//     QJsonArray restaurants = lieux["Restaurants"].toArray();
+//     for (const auto &value : restaurants) {
+//         QJsonObject restaurantObj = value.toObject();
+
+//         QVector<int> proximiteEpreuves;
+//         for (const auto &idVariant : restaurantObj["proximiteEpreuves"].toArray()) {
+//             proximiteEpreuves.append(idVariant.toInt());
+//         }
+
+//         Restaurant restaurant(
+//             restaurantObj["id"].toInt(),
+//             restaurantObj["nom"].toString(),
+//             restaurantObj["adresse"].toString(),
+//             restaurantObj["description"].toString(),
+//             restaurantObj["image_epreuve"].toString(),
+//             restaurantObj["transports"].toVariant().toStringList().toVector(),
+//             restaurantObj["plageHoraire"].toString(),
+//             restaurantObj["specialite"].toString(),
+//             proximiteEpreuves
+//         );
+//         listeRestaurants.append(restaurant);
+//     }
+
+//     // Ici, vous pouvez utiliser listeEpreuves et listeRestaurants selon vos besoins...
+//     // Par exemple, afficher des informations pour tester
+
+//     for (const Epreuve &epreuve : listeEpreuves) {
+//         qDebug() << "ID :" << epreuve.getNom();
+//         qDebug() << "Nom:" << epreuve.getNom();
+//         qDebug() << "Adresse:" << epreuve.getAdresse();
+//     }
+
+//     for (const Restaurant &restaurant : listeRestaurants) {
+//         qDebug() << "ID :" << restaurant.getNom();
+//         qDebug() << "Nom:" << restaurant.getNom();
+//         qDebug() << "Adresse:" << restaurant.getAdresse();
+//     }
+
+//     return 0;
+// }

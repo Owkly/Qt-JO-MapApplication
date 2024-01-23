@@ -1,4 +1,4 @@
-// Lieu.hpp
+// lieu.hpp
 #pragma once
 #include <QString>
 #include <QPixmap>
@@ -7,23 +7,26 @@
 
 class Lieu {
 public:
-    Lieu() {}
-    Lieu(int id, const QString &nom, const QString &adresse, const QString &description, const QPixmap &image, const QVector<QString> &lignesMetro)
-    : id(id), nom(nom), adresse(adresse), description(description), image(image), lignesMetro(lignesMetro) {}
-    virtual ~Lieu() {};
+    // Constructeurs et destructeur
+    // Lieu() {}
+    Lieu(int id, const QString &nom, const QString &adresse, const QString &description, const QString &image, const QVector<QString> &transports) :
+        id(id), nom(nom), adresse(adresse), description(description), image(image), transports(transports) {}
+    virtual ~Lieu() {}
 
+    // Getters
     int getId() const { return id; }
     QString getNom() const { return nom; }
     QString getAdresse() const { return adresse; }
     QString getDescription() const { return description; }
     QPixmap getImage() const { return image; }
-    QVector<QString> getLignesMetro() const { return lignesMetro; }
+    QVector<QString> getTransports() const { return transports; }
 
 protected:
+    // Attributs
     int id;
     QString nom;
     QString adresse;
     QString description;
-    QPixmap image;
-    QVector<QString> lignesMetro;
+    QString image;
+    QVector<QString> transports;
 };

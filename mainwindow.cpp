@@ -47,25 +47,25 @@ MainWindow::~MainWindow()
 
 
 
-// Dans mainwindow.cpp
-void MainWindow::afficherDetailsEpreuve(const Epreuve &epreuve)
-{
-    // Créez une nouvelle fenêtre pour afficher les détails de l'épreuve
-    QDialog *detailsDialog = new QDialog(this);
-    QVBoxLayout *layout = new QVBoxLayout(detailsDialog);
+// // Dans mainwindow.cpp
+// void MainWindow::afficherDetailsEpreuve(const Epreuve &epreuve)
+// {
+//     // Créez une nouvelle fenêtre pour afficher les détails de l'épreuve
+//     QDialog *detailsDialog = new QDialog(this);
+//     QVBoxLayout *layout = new QVBoxLayout(detailsDialog);
 
-    // Ajoutez des étiquettes pour afficher les informations de l'épreuve
-    QLabel *nomLabel = new QLabel("Nom: " + epreuve.getNom());
-    QLabel *adresseLabel = new QLabel("Adresse: " + epreuve.getAdresse());
-    QLabel *descriptionLabel = new QLabel("Description: " + epreuve.getDescription());
-    // Ajoutez d'autres étiquettes pour les autres informations...
+//     // Ajoutez des étiquettes pour afficher les informations de l'épreuve
+//     QLabel *nomLabel = new QLabel("Nom: " + epreuve.getNom());
+//     QLabel *adresseLabel = new QLabel("Adresse: " + epreuve.getAdresse());
+//     QLabel *descriptionLabel = new QLabel("Description: " + epreuve.getDescription());
+//     // Ajoutez d'autres étiquettes pour les autres informations...
 
-    // Ajoutez les étiquettes au layout
-    layout->addWidget(nomLabel);
-    layout->addWidget(adresseLabel);
-    layout->addWidget(descriptionLabel);
-    // Ajoutez les autres étiquettes...
+//     // Ajoutez les étiquettes au layout
+//     layout->addWidget(nomLabel);
+//     layout->addWidget(adresseLabel);
+//     layout->addWidget(descriptionLabel);
+//     // Ajoutez les autres étiquettes...
 
-    // Affichez la fenêtre
-    detailsDialog->exec();
-}
+//     // Affichez la fenêtre
+//     detailsDialog->exec();
+// }

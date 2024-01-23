@@ -1,19 +1,23 @@
-// Epreuve.hpp
+// epreuve.hpp
 #pragma once
 #include "lieu.hpp"
 
 class Epreuve : public Lieu {
 public:
-    Epreuve() {}
-    Epreuve(const Epreuve &epreuve) : Lieu(epreuve.getId(), epreuve.getNom(), epreuve.getAdresse(), epreuve.getDescription(), epreuve.getImage(), epreuve.getLignesMetro()), horaire(epreuve.getHoraire()), prixBillet(epreuve.getPrixBillet()) { }
-    Epreuve(int id, const QString &nom, const QDateTime &horaire, double prixBillet,
-    const QString &adresse, const QString &description, const QPixmap &image, const QVector<QString> &lignesMetro)
-    : Lieu(id, nom, adresse, description, image, lignesMetro), horaire(horaire), prixBillet(prixBillet) {}
-
-    QDateTime getHoraire() const { return horaire; }
+    // Constructeurs et destructeur
+    // Epreuve() {}
+    // Epreuve(const Epreuve &epreuve) : Lieu(epreuve), horaireDebut(epreuve.getHoraireDebut()), prixBillet(epreuve.getPrixBillet()), proximiteRestaurants(epreuve.getProximiteRestaurants()) {}
+    Epreuve(int id, const QString &nom, const QString &adresse, const QString &description, const QString &image, const QVector<QString> &transports, const QDateTime &horaireDebut, double prixBillet, const QVector<int> &proximiteRestaurants) :
+        Lieu(id, nom, adresse, description, image, transports), horaireDebut(horaireDebut), prixBillet(prixBillet), proximiteRestaurants(proximiteRestaurants) {}
+    
+    // Getters
+    QDateTime getHoraireDebut() const { return horaireDebut; }
     double getPrixBillet() const { return prixBillet; }
+    QVector<int> getProximiteRestaurants() const { return proximiteRestaurants; }
 
 private:
-    QDateTime horaire;
+    // Attributs
+    QDateTime horaireDebut;
     double prixBillet;
+    QVector<int> proximiteRestaurants;
 };

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "epreuve.hpp"
 #include "ui_mainwindow.h"
 
 #include <QMainWindow>
@@ -21,15 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setEpreuve(const Epreuve &epreuve); // Méthode pour définir l'épreuve à afficher
-    void afficherEpreuves(const QList<Epreuve> &epreuves); // Méthode pour afficher une liste d'épreuves
-
-
-public slots:
-    void afficherDetailsEpreuve(const Epreuve &epreuve);
-
 private:
     Ui::MainWindow *ui;
-    Epreuve currentEpreuve; // Attribut pour stocker l'épreuve
 };
 
