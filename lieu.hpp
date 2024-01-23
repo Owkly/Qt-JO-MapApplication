@@ -1,29 +1,36 @@
-// lieu.hpp
+// Lieu.hpp
 #pragma once
-#include <QString>
+#include "entite.hpp"
 #include <QPixmap>
 #include <QVector>
-#include <QDateTime>
+#include <QString>
+#include <QDebug>
 
-class Lieu {
+
+class Lieu : public Entite {
 public:
     // Constructeurs et destructeur
-    // Lieu() {}
     Lieu(int id, const QString &nom, const QString &adresse, const QString &description, const QString &image, const QVector<QString> &transports) :
-        id(id), nom(nom), adresse(adresse), description(description), image(image), transports(transports) {}
-    ~Lieu() {}
+        Entite(id), nom(nom), adresse(adresse), description(description), image(image), transports(transports) {}
+    virtual ~Lieu() {}
 
     // Getters
-    int getId() const { return id; }
     QString getNom() const { return nom; }
     QString getAdresse() const { return adresse; }
     QString getDescription() const { return description; }
     QPixmap getImage() const { return image; }
     QVector<QString> getTransports() const { return transports; }
 
+    // Méthode virtuelle implémentée
+    void afficher() const override {
+        qDebug() << "Lieu " << id << " : " << nom << " (" << adresse << ")";
+        // qDebug() << "Description : " << description;
+        // qDebug() << "Image : " << image;
+        // qDebug() << "Transports : " << transports;
+    }
+
 protected:
     // Attributs
-    int id;
     QString nom;
     QString adresse;
     QString description;

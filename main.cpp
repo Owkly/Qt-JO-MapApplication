@@ -111,3 +111,32 @@ int main(int argc, char *argv[])
 // }
 
 
+// #include "entite.hpp"
+// #include "lieu.hpp"
+// #include "epreuve.hpp"
+// #include "restaurant.hpp"
+// #include <QDebug>
+// #include <QDateTime>
+
+// int main() {
+//     // Création d'un lieu
+//     Lieu tourEiffel(1, "Tour Eiffel", "Champ de Mars, 5 Avenue Anatole France, 75007 Paris", 
+//                     "Une tour de fer puddlé de 330 mètres de hauteur", 
+//                     "path/to/image/tour_eiffel.jpg", {"Bus", "Métro"});
+//     tourEiffel.afficher();
+
+//     // Création d'une épreuve
+//     Epreuve natation(2, "Compétition de natation", "Piscine Olympique, Paris", 
+//                      "Épreuve de natation 100m nage libre", "path/to/image/natation.jpg", 
+//                      {"Bus", "Métro"}, QDateTime::currentDateTime(), 50.0, {3, 4});
+//     natation.afficher();
+
+//     // Création d'un restaurant
+//     Restaurant leJulesVerne(3, "Le Jules Verne", "Tour Eiffel, Paris", 
+//                             "Restaurant gastronomique français situé au deuxième étage de la Tour Eiffel", 
+//                             "path/to/image/le_jules_verne.jpg", {"Bus", "Métro"}, 
+//                             "12:00 - 15:00, 19:00 - 23:00", "Cuisine française", {2});
+//     leJulesVerne.afficher();
+
+//     return 0;
+// }
