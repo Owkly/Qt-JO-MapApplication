@@ -5,9 +5,9 @@ sujet.pdf
 Projet_Jeux_Olympiques
 guide.md
 Makefile
-Projet_Jeux_Olympiques 
 *.o
 qrc_ressources.cpp
 moc_mainwindow.cpp
 moc_predefs.h
 ui_mainwindow.h
+*.user
