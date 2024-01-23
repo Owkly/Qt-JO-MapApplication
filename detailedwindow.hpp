@@ -2,7 +2,7 @@
 #define DETAILEDWINDOW_HPP
 
 #include <QDialog>
-#include "ui_MyNewWindow.h"
+#include "ui_detailedwindow.h"
 
 class detailedwindow : public QDialog {
     Q_OBJECT
