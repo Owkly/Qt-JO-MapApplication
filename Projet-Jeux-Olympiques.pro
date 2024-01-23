@@ -23,19 +23,21 @@ QT += core gui widgets
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-	dataManager.cpp 
+	dataManager.cpp \
+    detailedwindow.cpp
     # Ajoutez d'autres fichiers sources (.cpp) ici si nécessaire
 
 HEADERS += \
     mainwindow.hpp \
     lieu.hpp \
     epreuve.hpp \
-	dataManager.hpp 
+	dataManager.hpp \
+    detailedwindow.hpp
     # Ajoutez d'autres en-têtes (.h) ici si nécessaire
 
 FORMS += \
     mainwindow.ui \
-
+    detailedwindow.ui
 
 # List of resource files
 RESOURCES += ressources.qrc
