@@ -1,13 +1,13 @@
 # ignorer le dossier .vscode
 .vscode
+guide.md
 sujet.pdf
 .qmake.stash
-Projet_Jeux_Olympiques
-guide.md
 Makefile
-*.o
 qrc_ressources.cpp
 moc_mainwindow.cpp
 moc_predefs.h
 ui_mainwindow.h
 *.user
+*.o
+Projet_Jeux_Olympiques

@@ -22,13 +22,15 @@ QT += core gui widgets
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+	dataManager.cpp 
     # Ajoutez d'autres fichiers sources (.cpp) ici si nécessaire
 
 HEADERS += \
     mainwindow.hpp \
     lieu.hpp \
-    epreuve.hpp
+    epreuve.hpp \
+	dataManager.hpp 
     # Ajoutez d'autres en-têtes (.h) ici si nécessaire
 
 FORMS += \

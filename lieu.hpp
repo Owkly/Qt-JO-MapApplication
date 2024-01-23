@@ -11,7 +11,7 @@ public:
     // Lieu() {}
     Lieu(int id, const QString &nom, const QString &adresse, const QString &description, const QString &image, const QVector<QString> &transports) :
         id(id), nom(nom), adresse(adresse), description(description), image(image), transports(transports) {}
-    virtual ~Lieu() {}
+    ~Lieu() {}
 
     // Getters
     int getId() const { return id; }
