@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>794</width>
     <height>600</height>
    </rect>
   </property>
@@ -18,14 +18,14 @@
     <item row="1" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QPushButton" name="openInfoMain">
+       <widget class="QPushButton" name="openInfoMainButton">
         <property name="text">
          <string>Infos</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="openMapMain">
+       <widget class="QPushButton" name="openMapMainButton">
         <property name="text">
          <string>Map</string>
         </property>
@@ -39,10 +39,10 @@
        <number>0</number>
       </property>
       <widget class="QWidget" name="infoPage">
-       <widget class="QPushButton" name="openDetailedInfo">
+       <widget class="QPushButton" name="openDetailedInfoButton">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>40</x>
           <y>130</y>
           <width>170</width>
           <height>48</height>
@@ -77,9 +77,9 @@
        <widget class="QScrollArea" name="scrollArea">
         <property name="geometry">
          <rect>
-          <x>210</x>
+          <x>240</x>
           <y>130</y>
-          <width>511</width>
+          <width>481</width>
           <height>361</height>
          </rect>
         </property>
@@ -91,7 +91,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>509</width>
+           <width>479</width>
            <height>359</height>
           </rect>
          </property>
@@ -108,7 +108,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>794</width>
      <height>22</height>
     </rect>
    </property>

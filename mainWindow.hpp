@@ -24,9 +24,9 @@ public:
 
 private slots:
     // Méthodes qui réagissant à certains événements (ici, les clics sur les boutons)
-    void openInfoPage();
-    void openMapPage();
-    void openDetailedPage();
+    void openInfoMain();
+    void openMapMain();
+    void openDetailedInfo();
 
 private:
     Ui::MainWindow *ui;

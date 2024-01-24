@@ -10,9 +10,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Connecter les signaux aux slots
-    connect(ui->openInfoMain, SIGNAL(clicked()), this, SLOT(openInfoPage()));
-    connect(ui->openMapMain, SIGNAL(clicked()), this, SLOT(openMapPage()));
-    connect(ui->openDetailedInfo, SIGNAL(clicked()), this, SLOT(openDetailedPage()));
+    connect(ui->openInfoMainButton, SIGNAL(clicked()), this, SLOT(openInfoMain()));
+    connect(ui->openMapMainButton, SIGNAL(clicked()), this, SLOT(openMapMain()));
+    connect(ui->openDetailedInfoButton, SIGNAL(clicked()), this, SLOT(openDetailedInfo()));
 }
 
 MainWindow::~MainWindow()
@@ -20,17 +20,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::openInfoPage()
+void MainWindow::openInfoMain()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::openMapPage()
+void MainWindow::openMapMain()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::openDetailedPage()
+void MainWindow::openDetailedInfo()
 {
     DetailedWindow detailedWindow(this);
     detailedWindow.setModal(true);
