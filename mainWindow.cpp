@@ -30,9 +30,28 @@ void MainWindow::openMapMain()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+//void MainWindow::openDetailedInfo()
+//{
+//    DetailedWindow detailedWindow(this);
+//    detailedWindow.setModal(true);
+//    detailedWindow.exec();
+//}
+
 void MainWindow::openDetailedInfo()
 {
-    DetailedWindow detailedWindow(this);
-    detailedWindow.setModal(true);
-    detailedWindow.exec();
+    // Récupération des informations à partir de la base de données JSON
+    DataManager dataManager("lieux.json");
+    QVector<Epreuve> epreuves = dataManager.toListEpreuves();
+    // Supposons que vous souhaitiez afficher les détails de la première épreuve
+    if (!epreuves.isEmpty()) {
+        Epreuve premiereEpreuve = epreuves.first();
+        QString details = "Nom : " + premiereEpreuve.getNom() + "\n"
+                         "Adresse : " + premiereEpreuve.getAdresse() + "\n"
+                         "Prix Billet : " + premiereEpreuve.getPrixBillet() + "€\n"
+                         "Description : " + premiereEpreuve.getDescription();
+        DetailedWindow detailedWindow(this);
+        detailedWindow.setModal(true);
+        detailedWindow.setDetails(details); // Passez les détails à la fenêtre de dialogue
+        detailedWindow.exec();
+    }
 }

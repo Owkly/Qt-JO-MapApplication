@@ -13,3 +13,8 @@ DetailedWindow::~DetailedWindow()
 {
     delete ui;
 }
+
+void DetailedWindow::setDetails(const QString &details)
+{
+    ui->textBrowser ->setText(details);
+}
