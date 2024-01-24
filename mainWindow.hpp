@@ -1,3 +1,4 @@
+//mainWindow.hpp
 #pragma once
 
 #include "ui_mainWindow.h"
@@ -19,6 +20,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_openInfoMain_clicked();
+
+    void on_openMapMain_clicked();
 
 private:
     Ui::MainWindow *ui;

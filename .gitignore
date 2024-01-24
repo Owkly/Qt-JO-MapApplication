@@ -4,7 +4,7 @@ sujet.pdf
 .qmake.stash
 Makefile
 qrc_ressources.cpp
-moc_*
+moc_*.*
 ui_*
 *.o
 *.user

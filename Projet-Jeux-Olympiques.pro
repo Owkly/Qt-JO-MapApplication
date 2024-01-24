@@ -11,11 +11,22 @@ QT += core gui widgets
 # quick location quickwidgets positioning
 
 
-SOURCES += *.cpp
+SOURCES += dataManager.cpp \
+           detailedWindow.cpp \
+           main.cpp \
+           mainWindow.cpp
 
-HEADERS += *.hpp
 
-FORMS += *.ui
+HEADERS += mainWindow.hpp \
+           dataManager.hpp \
+           detailedWindow.hpp \
+           entite.hpp \
+           epreuve.hpp \
+           lieu.hpp \
+           restaurant.hpp
+
+FORMS += mainWindow.ui \
+    detailedWindow.ui
 
 # List of resource files
 RESOURCES += ressources.qrc

@@ -13,14 +13,72 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>380</y>
+          <width>129</width>
+          <height>34</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Page 1</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>380</y>
+          <width>129</width>
+          <height>34</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Page 2</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QPushButton" name="openInfoMain">
+        <property name="text">
+         <string>Infos</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openMapMain">
+        <property name="text">
+         <string>Map</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>39</height>
     </rect>
    </property>
   </widget>
