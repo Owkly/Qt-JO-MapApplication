@@ -40,13 +40,6 @@ void MainWindow::openMapMain()
     ui->stackedWidget->setCurrentIndex(2);
 }
 
-//void MainWindow::openDetailedInfo()
-//{
-//    DetailedWindow detailedWindow(this);
-//    detailedWindow.setModal(true);
-//    detailedWindow.exec();
-//}
-
 void MainWindow::openDetailedInfo()
 {
     // Récupération des informations à partir de la base de données JSON
@@ -83,8 +76,10 @@ void MainWindow::addEpreuveScrollArea(const Epreuve &epreuve)
     QVBoxLayout *infoLayout = new QVBoxLayout();
     QLabel *nomLabel = new QLabel(epreuve.getNom());
     QLabel *horaireLabel = new QLabel(epreuve.getHoraireDebut().toString());
+    QLabel *prixBillet = new QLabel(QString::number(epreuve.getPrixBillet()) + " €");
+    
         // Ajustements de la taille et de l'alignement des labels
-    for (auto infoLabel : {nomLabel, horaireLabel})
+    for (auto infoLabel : {nomLabel, horaireLabel, prixBillet})
     {
         infoLabel->setFixedWidth(300);
         infoLabel->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
