@@ -26,6 +26,8 @@ private slots:
 
     void on_openMapMain_clicked();
 
+    void on_openDetailedInfo_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
