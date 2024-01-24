@@ -1,3 +1,4 @@
+// detailedWindow.cpp
 #include "detailedWindow.hpp"
 #include "ui_detailedWindow.h"
 

@@ -1,6 +1,5 @@
-#ifndef DETAILEDWINDOW_HPP
-#define DETAILEDWINDOW_HPP
-
+// detailedWindow.hpp
+#pragma once
 #include <QDialog>
 
 namespace Ui {
@@ -19,4 +18,3 @@ private:
     Ui::DetailedWindow *ui;
 };
 
-#endif // DETAILEDWINDOW_HPP

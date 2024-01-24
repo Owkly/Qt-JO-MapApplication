@@ -1,4 +1,4 @@
-//mainWindow.hpp
+// mainWindow.hpp
 #pragma once
 
 #include "ui_mainWindow.h"
@@ -18,19 +18,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    // Constructeur et destructeur
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_openInfoMain_clicked();
-
-    void on_openMapMain_clicked();
-
-    void on_openDetailedInfo_clicked();
+    // Méthodes qui réagissant à certains événements (ici, les clics sur les boutons)
+    void openInfoPage();
+    void openMapPage();
+    void openDetailedPage();
 
 private:
     Ui::MainWindow *ui;
 };
-
-
 
