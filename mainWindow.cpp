@@ -3,17 +3,17 @@
 #include "ui_mainWindow.h"
 #include "detailedWindow.hpp"
 #include "dataManager.hpp"
-#include "epreuve.hpp"
+#include "event.hpp"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     // Configuration de l'attribut ui (User Interface)
     ui->setupUi(this);
 
-    // Configuration des attributs listeEpreuves et listeRestaurants à partir du fichier JSON
+    // Configuration des attributs listEvents et listRestaurants à partir du fichier JSON
     DataManager dataManager(":/lieux.json");
-    listeEpreuves = dataManager.toListEpreuves();
-    listeRestaurants = dataManager.toListRestaurants();
+    listEvents = dataManager.toListEvents();
+    listRestaurants = dataManager.toListRestaurants();
 
     // Configuration de l'attribut scrollAreaLayout où seront ajoutés les widgets des épreuves
     scrollAreaLayout = new QVBoxLayout(ui->scrollAreaWidgetContents);
@@ -21,7 +21,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Connexion des signaux pour les boutons de navigation
     connect(ui->openInfoMainButton, SIGNAL(clicked()), this, SLOT(openInfoMain()));
     connect(ui->openMapMainButton, SIGNAL(clicked()), this, SLOT(openMapMain()));
-    connect(ui->openDetailedInfoButton, SIGNAL(clicked()), this, SLOT(openDetailedInfo()));
     // Connexion des signaux pour la barre de recherche
     connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchItem()));
     connect(ui->inputArea, SIGNAL(returnPressed()), this, SLOT(searchItem()));
@@ -40,8 +39,8 @@ MainWindow::~MainWindow()
 void MainWindow::openInfoMain()
 {
     ui->stackedWidget->setCurrentIndex(1);
-    setupItemsScrollArea(listeEpreuves);
-    setupItemsScrollArea(listeRestaurants);
+    setupItemsScrollArea(listEvents);
+    setupItemsScrollArea(listRestaurants);
     addVerticalSpacerToEnd();
 }
 
@@ -55,17 +54,17 @@ void MainWindow::openMapMain()
 void MainWindow::openDetailedInfo()
 {
     DataManager dataManager("lieux.json");
-    QVector<Epreuve> epreuves = dataManager.toListEpreuves();
-    if (!epreuves.isEmpty())
+    QVector<Event> events = dataManager.toListEvents();
+    if (!events.isEmpty())
     {
-        Epreuve premiereEpreuve = epreuves.first();
-        QString details = "Nom : " + premiereEpreuve.getNom() + "\n"
+        Event premiereEvent = events.first();
+        QString details = "Nom : " + premiereEvent.getName() + "\n"
                                                                 "Adresse : " +
-                          premiereEpreuve.getAdresse() + "\n"
+                          premiereEvent.getAddress() + "\n"
                                                          "Prix Billet : " +
-                          premiereEpreuve.getPrixBillet() + "€\n"
+                          premiereEvent.getTicketPrice() + "€\n"
                                                             "Description : " +
-                          premiereEpreuve.getDescription();
+                          premiereEvent.getDescription();
         DetailedWindow detailedWindow(this);
         detailedWindow.setModal(true);
         detailedWindow.setDetails(details); // Passez les détails à la fenêtre de dialogue
@@ -74,11 +73,11 @@ void MainWindow::openDetailedInfo()
 }
 
 // Ajout des infos (nom, adresse, horaire) au Layout (3)
-void MainWindow::addEpreuveLabels(QVBoxLayout *nameAdressTimeLayout, const Epreuve &epreuve)
+void MainWindow::addEventLabels(QVBoxLayout *nameAdressTimeLayout, const Event &event)
 {
-    QLabel *nomLabel = new QLabel(epreuve.getNom());
-    QLabel *adresseLabel = new QLabel(epreuve.getAdresse());
-    QDateTime horaireDebut = epreuve.getHoraireDebut();
+    QLabel *nomLabel = new QLabel(event.getName());
+    QLabel *adresseLabel = new QLabel(event.getAddress());
+    QDateTime horaireDebut = event.getStartTime();
     QString horaireDebutTexte = horaireDebut.toString("dd/MM/yyyy - hh:mm:ss");
     QLabel *horaireLabel = new QLabel(horaireDebutTexte);
     for (auto label : {nomLabel, adresseLabel, horaireLabel})
@@ -91,9 +90,9 @@ void MainWindow::addEpreuveLabels(QVBoxLayout *nameAdressTimeLayout, const Epreu
 // Ajout des infos (nom, adresse, horaire) au Layout (3)
 void MainWindow::addRestaurantLabels(QVBoxLayout *nameAdressTimeLayout, const Restaurant &restaurant)
 {
-    QLabel *nomLabel = new QLabel(restaurant.getNom());
-    QLabel *adresseLabel = new QLabel(restaurant.getAdresse());
-    QLabel *plageHoraireLabel = new QLabel(restaurant.getPlageHoraire());
+    QLabel *nomLabel = new QLabel(restaurant.getName());
+    QLabel *adresseLabel = new QLabel(restaurant.getAddress());
+    QLabel *plageHoraireLabel = new QLabel(restaurant.getOpeningHours());
     for (auto label : {nomLabel, adresseLabel, plageHoraireLabel})
     {
         configureLabel(label);
@@ -139,20 +138,20 @@ void MainWindow::searchItem()
     // Filtrer les épreuves dont le nom ou l'adresse contient le texte recherché peu importe la casse (majuscule/minuscule)
     if (selectedFilter == "Tout" || selectedFilter == "Epreuves")
     {
-        for (const Epreuve &epreuve : listeEpreuves)
+        for (const Event &event : listEvents)
         {
-            if (epreuve.getNom().contains(searchText, Qt::CaseInsensitive) || epreuve.getAdresse().contains(searchText, Qt::CaseInsensitive))
+            if (event.getName().contains(searchText, Qt::CaseInsensitive) || event.getAddress().contains(searchText, Qt::CaseInsensitive))
             {
-                addItemToScrollArea(epreuve);
+                addItemToScrollArea(event);
             }
         }
     }
     // Faites les restaurants dont le nom ou l'adresse contient le texte recherché peu importe la casse (majuscule/minuscule)
     if (selectedFilter == "Tout" || selectedFilter == "Restaurants")
     {
-        for (const Restaurant &restaurant : listeRestaurants)
+        for (const Restaurant &restaurant : listRestaurants)
         {
-            if (restaurant.getNom().contains(searchText, Qt::CaseInsensitive) || restaurant.getAdresse().contains(searchText, Qt::CaseInsensitive))
+            if (restaurant.getName().contains(searchText, Qt::CaseInsensitive) || restaurant.getAddress().contains(searchText, Qt::CaseInsensitive))
             {
                 addItemToScrollArea(restaurant);
             }

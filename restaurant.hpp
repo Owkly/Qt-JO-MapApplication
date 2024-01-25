@@ -1,36 +1,28 @@
 // restaurant.hpp
 #pragma once
-#include "lieu.hpp"
+#include "location.hpp"
 #include <QDateTime>
 
-class Restaurant : public Lieu {
+class Restaurant : public Location {
 public:
-    // Constructeurs et destructeur
-    // Restaurant() {}
-    // Restaurant(const Restaurant &restaurant) : Lieu(restaurant), plageHoraire(restaurant.getPlageHoraire()), specialite(restaurant.getSpecialite()), proximiteEpreuves(restaurant.getProximiteEpreuves()) {}
-    Restaurant(int id, const QString &nom, const QString &adresse, const QString &description, const QString &image, const QVector<QString> &transports, const QString &plageHoraire, const QString &specialite, const QVector<int> &proximiteEpreuves) :
-        Lieu(id, nom, adresse, description, image, transports), plageHoraire(plageHoraire), specialite(specialite), proximiteEpreuves(proximiteEpreuves) {}
+    // Constructeur et destructeur
+Restaurant(int id, const QString &name, const QString &address, const QString &description, const QString &locationImage, const QVector<QString> &transportation, const QString &openingHours, const QString &specialty, const QVector<int> &nearbyEvents) :
+        Location(id, name, address, description, locationImage, transportation), openingHours(openingHours), specialty(specialty), nearbyEvents(nearbyEvents) {}
     virtual ~Restaurant() {}
 
     // Getters
-    QString getPlageHoraire() const { return plageHoraire; }
-    QString getSpecialite() const { return specialite; }
-    QVector<int> getProximiteEpreuves() const { return proximiteEpreuves; }
+    QString getOpeningHours() const { return openingHours; }
+    QString getSpecialty() const { return specialty; }
+    QVector<int> getNearbyEvents() const { return nearbyEvents; }
 
-    // Méthode virtuelle implémentée
-    void afficher() const override {
-        // Implémentation d'affichage pour Epreuve
-        qDebug() << "Restaurant " << id << " : " << nom << " (" << adresse << ")";
-        // qDebug() << "Description : " << description;
-        // qDebug() << "Image : " << image;
-        // qDebug() << "Transports : " << transports;
-        // qDebug() << "Plage horaire : " << plageHoraire;
-        // qDebug() << "Spécialité : " << specialite;
-        // qDebug() << "Proximité des épreuves : " << proximiteEpreuves;
+    // Méthodes
+    void display() const override {
+        qDebug() << "Restaurant " << id << " : " << name << " (" << address << ")";
     }
+
 private:
-    // Attributs
-    QString plageHoraire;
-    QString specialite;
-    QVector<int> proximiteEpreuves; 
+    // Attributes
+    QString openingHours;
+    QString specialty;
+    QVector<int> nearbyEvents;
 };

@@ -1,7 +1,7 @@
 // dataManager.hpp
 #pragma once
 
-#include "epreuve.hpp"
+#include "event.hpp"
 #include "restaurant.hpp"
 
 #include <QFile>
@@ -18,14 +18,14 @@ public:
     ~DataManager();
 
     // Méthodes pour convertir les données du fichier JSON en liste d'objets Epreuve ou Restaurant
-    QVector<Epreuve> toListEpreuves();
+    QVector<Event> toListEvents();
     QVector<Restaurant> toListRestaurants();
 	
     // Méthode pour lire le fichier JSON  et convertir en QJsonArray
     QJsonArray readJsonArray(const QString &key);
 
     // Algorithme pour convertir les données du fichier JSON sous forme de QJsonArray en liste d'objets Epreuve ou Restaurant
-    QVector<Epreuve> toListEpreuvesAlgo(const QJsonArray &jsonArray);
+    QVector<Event> toListEventsAlgo(const QJsonArray &jsonArray);
     QVector<Restaurant> toListRestaurantsAlgo(const QJsonArray &jsonArray);
 
 private:

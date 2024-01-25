@@ -7,10 +7,10 @@ DataManager::DataManager(const QString &jsonFilePath) : jsonFilePath(jsonFilePat
 DataManager::~DataManager() {}
 
 // Méthodes pour convertir les données du fichier JSON en liste d'objets Epreuve ou Restaurant
-QVector<Epreuve> DataManager::toListEpreuves()
+QVector<Event> DataManager::toListEvents()
 {
     QJsonArray jsonArray = readJsonArray("Epreuves");
-    return toListEpreuvesAlgo(jsonArray);
+    return toListEventsAlgo(jsonArray);
 }
 
 QVector<Restaurant> DataManager::toListRestaurants()
@@ -37,44 +37,45 @@ QJsonArray DataManager::readJsonArray(const QString &key)
 }
 
 // Algorithme pour convertir les données du fichier JSON sous forme de QJsonArray en liste d'objets Epreuve ou Restaurant
-QVector<Epreuve> DataManager::toListEpreuvesAlgo(const QJsonArray &jsonArray)
+QVector<Event> DataManager::toListEventsAlgo(const QJsonArray &jsonArray)
 {
-    QVector<Epreuve> listeEpreuves;
+    QVector<Event> listEvents;
     for (const auto &value : jsonArray)
     {
-        QJsonObject epreuveObj = value.toObject();
-        QVector<int> proximiteRestaurants;
-        for (const auto &idVariant : epreuveObj["proximiteRestaurant"].toArray())
+        QJsonObject eventObj = value.toObject();
+        QVector<int> nearbyRestaurants;
+        for (const auto &idVariant : eventObj["proximiteRestaurant"].toArray())
         {
-            proximiteRestaurants.append(idVariant.toInt());
+            nearbyRestaurants.append(idVariant.toInt());
         }
 
-        Epreuve epreuve(
-            epreuveObj["id"].toInt(),
-            epreuveObj["nom"].toString(),
-            epreuveObj["adresse"].toString(),
-            epreuveObj["description"].toString(),
-            epreuveObj["image"].toString(),
-            epreuveObj["transports"].toVariant().toStringList().toVector(),
-            QDateTime::fromString(epreuveObj["horaireDebut"].toString(), Qt::ISODate),
-            epreuveObj["prixBillet"].toDouble(),
-            proximiteRestaurants);
+        Event event(
+            eventObj["id"].toInt(),
+            eventObj["nom"].toString(),
+            eventObj["adresse"].toString(),
+            eventObj["description"].toString(),
+            eventObj["image_lieu"].toString(),
+            eventObj["image_epreuve"].toString(),
+            eventObj["transports"].toVariant().toStringList().toVector(),
+            QDateTime::fromString(eventObj["horaireDebut"].toString(), Qt::ISODate),
+            eventObj["prixBillet"].toDouble(),
+            nearbyRestaurants);
 
-        listeEpreuves.append(epreuve);
+        listEvents.append(event);
     }
-    return listeEpreuves;
+    return listEvents;
 }
 
 QVector<Restaurant> DataManager::toListRestaurantsAlgo(const QJsonArray &jsonArray)
 {
-    QVector<Restaurant> listeRestaurants;
+    QVector<Restaurant> listRestaurants;
     for (const auto &value : jsonArray)
     {
         QJsonObject restaurantObj = value.toObject();
-        QVector<int> proximiteEpreuves;
+        QVector<int> nearbyEvents;
         for (const auto &idVariant : restaurantObj["proximiteEpreuves"].toArray())
         {
-            proximiteEpreuves.append(idVariant.toInt());
+            nearbyEvents.append(idVariant.toInt());
         }
 
         Restaurant restaurant(
@@ -86,9 +87,9 @@ QVector<Restaurant> DataManager::toListRestaurantsAlgo(const QJsonArray &jsonArr
             restaurantObj["transports"].toVariant().toStringList().toVector(),
             restaurantObj["plageHoraire"].toString(),
             restaurantObj["specialite"].toString(),
-            proximiteEpreuves);
+            nearbyEvents);
 
-        listeRestaurants.append(restaurant);
+        listRestaurants.append(restaurant);
     }
-    return listeRestaurants;
+    return listRestaurants;
 }

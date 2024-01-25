@@ -21,8 +21,8 @@ SOURCES += dataManager.cpp \
 HEADERS += mainWindow.hpp \
            dataManager.hpp \
            detailedWindow.hpp \
-           entite.hpp \
-           epreuve.hpp \
+           entity.hpp \
+           event.hpp \
            lieu.hpp \
            restaurant.hpp \
            clickableWidget.hpp 

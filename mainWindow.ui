@@ -184,21 +184,8 @@ p, li { white-space: pre-wrap; }
             <bool>true</bool>
            </property>
            <property name="autoFillBackground">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
-           <widget class="QPushButton" name="openDetailedInfoButton">
-            <property name="geometry">
-             <rect>
-              <x>240</x>
-              <y>10</y>
-              <width>80</width>
-              <height>25</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Détails</string>
-            </property>
-           </widget>
           </widget>
          </widget>
         </item>

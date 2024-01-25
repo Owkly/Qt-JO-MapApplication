@@ -3,11 +3,11 @@
         "Epreuves": [
             {
                 "id": 1,
-                "nom": "100m femmes",
+                "nom": "Athlétisme 100m femmes",
                 "adresse": "Stade de France, Plaine St-Denis, 93210, St-Ouen",
                 "description": "100m d'athlétisme pour les femmes",
                 "image_lieu": ":/images/stade_de_france.jpg",
-                "image_epreuve": ":/images/100m.jpg",
+                "image_epreuve": ":/images/athletisme.jpg",
                 "transports": [
                     "Ligne 4",
                     "Rer B"
@@ -37,7 +37,7 @@
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
                 "description": "Epreuves de gymnastiques individuelles pour les femmes",
                 "image_lieu": ":/images/bercy_arena.jpg",
-                "image_epreuve": ":/images/gymnastique_femmes.jpg",
+                "image_epreuve": ":/images/gymnastique.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 6",
@@ -53,7 +53,7 @@
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 750013, Paris",
                 "description": "Epreuve de gymnastique par équipe pour les hommes",
                 "image_lieu": ":/images/bercy_arena.jpg",
-                "image_epreuve": ":/images/gymnastique_hommes.jpg",
+                "image_epreuve": ":/images/gymnastique.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 6",
@@ -69,7 +69,7 @@
                 "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
                 "description": "Epreuve de 400m 4 nages pour les hommes",
                 "image_lieu": ":/images/piscine.jpg",
-                "image_epreuve": ":/images/natation_homme.jpg",
+                "image_epreuve": ":/images/natation.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 4",
@@ -87,7 +87,7 @@
                 "adresse": "Piscine Suzanne Berlioux, 10 Place de la Rotonde, 75001,Paris",
                 "description": "Epreuve de 50m nage libre pour les femmes",
                 "image_lieu": ":/images/piscine.jpg",
-                "image_epreuve": ":/images/natation_femme.jpg",
+                "image_epreuve": ":/images/natation.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 4",
@@ -105,7 +105,7 @@
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Demi-Finale de basketball opposant les Etats-Unis à l'Espagne",
                 "image_lieu": ":/images/bercy_arena.jpg",
-                "image_epreuve": ":/images/basket_USA_Espagne.jpg",
+                "image_epreuve": ":/images/basket.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -120,7 +120,7 @@
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Demi-Finale de basketball opposant la France à l'Australie",
                 "image_lieu": ":/images/bercy_arena.jpg",
-                "image_epreuve": ":/images/basket_france_australie.jpg",
+                "image_epreuve": ":/images/basket.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -135,7 +135,7 @@
                 "adresse": "Bercy Arena, 139 Rue de Bercy, 75013,Paris",
                 "description": "Match de Finale de basketball opposant la France aux Etats-Unis",
                 "image_lieu": ":/images/bercy_arena.jpg",
-                "image_epreuve": ":/images/basket_france_usa.jpg",
+                "image_epreuve": ":/images/basket.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 14"
@@ -150,7 +150,7 @@
                 "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
                 "description": "Epreuve de Taekwondo pour les hommes de moins de 80kg",
                 "image_lieu": ":/images/grand_palais.jpg",
-                "image_epreuve": ":/images/taekwondo_hommes.jpg",
+                "image_epreuve": ":/images/taekwondo.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 9",
@@ -166,7 +166,7 @@
                 "adresse": "Grand Palais, 3 Avenue du Général Eisenhowr, 75008, Paris",
                 "description": "Epreuve de Taekwondo pour les femmes de plus de 67kg",
                 "image_lieu": ":/images/grand_palais.jpg",
-                "image_epreuve": ":/images/taekwondo_femmes.jpg",
+                "image_epreuve": ":/images/taekwondo.jpg",
                 "transports": [
                     "Ligne 1",
                     "Ligne 9",
@@ -182,7 +182,7 @@
                 "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
                 "description": "Epreuve de cyclisme par équipe pour les hommes",
                 "image_lieu": ":/images/velodrome.jpg",
-                "image_epreuve": ":/images/poursuite_homme.jpg",
+                "image_epreuve": ":/images/cyclisme.jpg",
                 "transports": [
                     "Ligne 4",
                     "Ligne 12"
@@ -197,7 +197,7 @@
                 "adresse": "Vélodrome de Paris, 21 Avenue de Saint-Ouen, 75018, Paris",
                 "description": "Epreuve de cyclisme pour les femmes",
                 "image_lieu": ":/images/velodrome.jpg",
-                "image_epreuve": ":/images/keirin_femmes.jpg",
+                "image_epreuve": ":/images/cyclisme.jpg",
                 "transports": [
                     "Ligne 4",
                     "Ligne 12"
@@ -212,7 +212,7 @@
                 "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de tir à l'arc pour les hommes",
                 "image_lieu": ":/images/parc_expositions.jpg",
-                "image_epreuve": ":/images/tir_arc_hommes.jpg",
+                "image_epreuve": ":/images/tir_arc.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -226,7 +226,7 @@
                 "adresse": "Parc des Expositions, 1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de tir à l'arc pour les hommes",
                 "image_lieu": ":/images/parc_expositions.jpg",
-                "image_epreuve": ":/images/tir_arc_femmes.jpg",
+                "image_epreuve": ":/images/tir_arc.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -240,7 +240,7 @@
                 "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de boxe pour les hommes de moins de 60kg",
                 "image_lieu": ":/images/palais_sports.jpg",
-                "image_epreuve": ":/images/boxe_hommes.jpg",
+                "image_epreuve": ":/images/boxe.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -254,7 +254,7 @@
                 "adresse": "Palais des Sports ,1 Place de la Porte de Versailles, 75015, Paris",
                 "description": "Epreuve de boxe pour les femmes de moins de 60kg",
                 "image_lieu": ":/images/palais_sports.jpg",
-                "image_epreuve": ":/images/boxe_femmes.jpg",
+                "image_epreuve": ":/images/boxe.jpg",
                 "transports": [
                     "Ligne 12"
                 ],
@@ -268,7 +268,7 @@
                 "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
                 "description": "Epreuve de saut d'obstacles par équipe pour les hommes",
                 "image_lieu": ":/images/hippodrome.jpg",
-                "image_epreuve": ":/images/saut_obstacles_hommes.jpg",
+                "image_epreuve": ":/images/equitation.jpg",
                 "transports": [
                     "Ligne 4",
                     "Rer B"
@@ -283,7 +283,7 @@
                 "adresse": "Hippodrome de Longchamp, Route des Tribunes, 75016, Paris",
                 "description": "Epreuve de dressage individuel pour les femmes",
                 "image_lieu": ":/images/hippodrome.jpg",
-                "image_epreuve": ":/images/dressage_femmes.jpg",
+                "image_epreuve": ":/images/equitation.jpg",
                 "transports": [
                     "Bus 261",
                     "Bus 70",
@@ -299,7 +299,7 @@
                 "adresse": "Gymnase Buffault, 26 Rue Buffault, Paris",
                 "description": "Finale d'escrime par equipe opposant la France à la Russie",
                 "image_lieu": ":/images/gymnase_buffault.jpg",
-                "image_epreuve": ":/images/escrime_france_russie.jpg",
+                "image_epreuve": ":/images/escrime.jpg",
                 "transports": [
                     "Ligne 7",
                     "Ligne 9",
