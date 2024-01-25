@@ -208,12 +208,6 @@ private:
 
         itemLayout->addWidget(infoWidget);
 
-        // Suppression de l'ajout redondant des informations
-        // Suppression de la création et de l'ajout de infoLabel redondant
-        // QLabel *infoLabel = new QLabel(briefInfo);
-        // configureLabel(infoLabel);  // Fonction à définir pour configurer le label
-        // itemLayout->addWidget(infoLabel);
-
         // Ajout des détails et connexion du signal clicked
         QString details = constructDetailsString(item);  // Fonction à définir pour construire la chaîne de détails
         itemWidget->setDetails(details);
