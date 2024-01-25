@@ -160,3 +160,11 @@ void MainWindow::searchItem()
     }
     addVerticalSpacerToEnd();
 }
+
+void MainWindow::showDetails(const QString &details)
+{
+    DetailedWindow detailedWindow(this);
+    detailedWindow.setModal(true);
+    detailedWindow.setDetails(details);
+    detailedWindow.exec();
+}

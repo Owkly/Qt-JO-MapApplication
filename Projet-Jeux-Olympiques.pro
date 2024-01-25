@@ -14,7 +14,8 @@ QT += core gui widgets
 SOURCES += dataManager.cpp \
            detailedWindow.cpp \
            main.cpp \
-           mainWindow.cpp
+           mainWindow.cpp \
+           clickableWidget.cpp 
 
 
 HEADERS += mainWindow.hpp \
@@ -23,7 +24,8 @@ HEADERS += mainWindow.hpp \
            entite.hpp \
            epreuve.hpp \
            lieu.hpp \
-           restaurant.hpp
+           restaurant.hpp \
+           clickableWidget.hpp 
 
 FORMS += mainWindow.ui \
     detailedWindow.ui
