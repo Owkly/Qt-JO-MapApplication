@@ -57,33 +57,40 @@ private:
     template <typename T>
     void addItemToScrollArea(const T &item)
     {
-        // Utilisation de ClickableWidget pour la gestion des clics
+        // Création d'un itemWidget et de son layout (1) qui contiendra la mise en page des items
         ClickableWidget *itemWidget = new ClickableWidget();
         QVBoxLayout *itemLayout = new QVBoxLayout(itemWidget);
-        itemWidget->setStyleSheet("background-color: #7FFFD4;");
+        itemWidget->setStyleSheet("background-color: #DCB253; " // jaune/orange
+                                  "border: 3px solid #000000; "
+                                  "border-radius: 6px; "
+                                  "padding: 5px; "
+                                  "margin: 5px;");
 
-        // Création et configuration de l'infoWidget
+        // Layout (2) qui contiendra la mise en page des informations de l'item
         QWidget *infoWidget = new QWidget();
         QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
-        infoWidget->setStyleSheet("background-color: #FFA07A;");
 
-        // Création et configuration de nameAdressTimeWidget
+        // layout (3) qui contiendra la mise en page des informations (nom, adresse, horaire) de l'item
         QWidget *nameAdressTimeWidget = new QWidget();
         QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
-        nameAdressTimeWidget->setStyleSheet("background-color: #FFFF00;");
+
+        // Ajout des labels nom, adresse, horaire au layout (3)
+        nameAdressTimeWidget->setStyleSheet("background-color: #4aa77c;"); // vert
         addInfoLabels(nameAdressTimeLayout, item);
 
-        // Configuration de l'image
+        // Ajout de l'image et du layout (3) au layout (2)
         QLabel *imageLabel = new QLabel();
         imageLabel->setPixmap(QPixmap(getImagePathForItem(item)).scaled(150, 150));
+
         infoLayout->addWidget(imageLabel);
         nameAdressTimeLayout->addStretch(1);
         infoLayout->addWidget(nameAdressTimeWidget);
 
+        // Ajout du layout (2) au layout (1)
         itemLayout->addWidget(infoWidget);
 
-        // Ajout des détails et connexion du signal clicked
-        QString details = constructDetailsString(item); // Fonction à définir pour construire la chaîne de détails
+        // Ajout du layout (1) au scrollAreaLayout en le rendant cliquable
+        QString details = constructDetailsString(item);
         itemWidget->setDetails(details);
         connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
 

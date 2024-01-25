@@ -11,20 +11,20 @@ QT += core gui widgets
 # quick location quickwidgets positioning
 
 
-SOURCES += dataManager.cpp \
-           detailedWindow.cpp \
-           main.cpp \
+SOURCES += main.cpp \
            mainWindow.cpp \
+           dataManager.cpp \
+           detailedWindow.cpp \
            clickableWidget.cpp 
 
 
 HEADERS += mainWindow.hpp \
+           entity.hpp \
+           location.hpp \
+           event.hpp \
+           restaurant.hpp \
            dataManager.hpp \
            detailedWindow.hpp \
-           entity.hpp \
-           event.hpp \
-           lieu.hpp \
-           restaurant.hpp \
            clickableWidget.hpp 
 
 FORMS += mainWindow.ui \

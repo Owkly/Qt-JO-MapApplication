@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     // Configuration de l'attribut ui (User Interface)
     ui->setupUi(this);
+    this->setWindowTitle("JO 2024");
+    this->showMaximized();
 
     // Configuration des attributs listEvents et listRestaurants à partir du fichier JSON
     DataManager dataManager(":/lieux.json");
@@ -26,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->inputArea, SIGNAL(returnPressed()), this, SLOT(searchItem()));
     connect(ui->filterComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(searchItem()));
 
-    scrollAreaLayout->setAlignment(Qt::AlignTop);
-    // À la fin de l'ajout de tous les widgets à scrollAreaLayout
+    // Configuration de la couleur de fond de la scrollArea
+    ui->scrollArea->setStyleSheet("QWidget { background-color: #fffae5; }");    
 }
 
 MainWindow::~MainWindow()
@@ -59,11 +61,11 @@ void MainWindow::openDetailedInfo()
     {
         Event premiereEvent = events.first();
         QString details = "Nom : " + premiereEvent.getName() + "\n"
-                                                                "Adresse : " +
+                                                               "Adresse : " +
                           premiereEvent.getAddress() + "\n"
-                                                         "Prix Billet : " +
+                                                       "Prix Billet : " +
                           premiereEvent.getTicketPrice() + "€\n"
-                                                            "Description : " +
+                                                           "Description : " +
                           premiereEvent.getDescription();
         DetailedWindow detailedWindow(this);
         detailedWindow.setModal(true);
@@ -103,10 +105,11 @@ void MainWindow::addRestaurantLabels(QVBoxLayout *nameAdressTimeLayout, const Re
 // Configuration des labels du Layout (3)
 void MainWindow::configureLabel(QLabel *label)
 {
-    // label->setFixedWidth(1500);
     label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
-    // Exemple pour définir une couleur de fond à un QLabel pour le débogage
-    label->setStyleSheet("QLabel { background-color: orange; }");
+    label->setStyleSheet("QLabel { "
+                         "background-color: #D7C379; " // Couleur de fond plus douce
+                         "border: 1px solid #CCCCCC; " // Bordure subtile
+                         "}");
 }
 
 // Méthode pour ajouter un espaceur vertical
