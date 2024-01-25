@@ -21,6 +21,14 @@
         <file>images/indien.jpg</file>
         <file>images/japonais.jpg</file>
         <file>images/chinois.jpg</file>
+        <file>images/stade_de_france.jpg</file>
+        <file>images/parc_expositions.jpg</file> 
+        <file>images/piscine.jpg</file> 
+        <file>images/velodrome.jpg</file>   
+        <file>images/hippodrome.jpg</file>
+        <file>images/bercy_arena.jpg</file>
+        <file>images/palais_sports.jpg</file>
+        <file>images/grand_palais.jpg</file>  
         <file>lieux.json</file> 
     </qresource>
 </RCC>
