@@ -118,25 +118,110 @@ private:
 //    }
 //----------------------------------------------------------------------------------------
 
+//    template <typename T>
+//    void addItemToScrollArea(const T &item)
+//    {
+//        ClickableWidget *itemWidget = new ClickableWidget();
+//        QString briefInfo = item.getNom() + " - " + item.getAdresse();
+//        QString details = constructDetailsString(item);
+
+//        QLabel *infoLabel = new QLabel(briefInfo);
+//        configureLabel(infoLabel);
+
+//        QVBoxLayout *itemLayout = new QVBoxLayout();
+//        itemLayout->addWidget(infoLabel);
+//        itemWidget->setLayout(itemLayout);
+
+//        itemWidget->setDetails(details);
+//        connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
+
+//        scrollAreaLayout->addWidget(itemWidget);
+//    }
+
+//-----------------------------Truc redondant----------------------------------------------
+//    template <typename T>
+//    void addItemToScrollArea(const T &item)
+//    {
+//        // Utilisation de ClickableWidget pour la gestion des clics
+//        ClickableWidget *itemWidget = new ClickableWidget();
+//        QVBoxLayout *itemLayout = new QVBoxLayout(itemWidget);
+//        itemWidget->setStyleSheet("background-color: #7FFFD4;");
+
+//        // Création et configuration de l'infoWidget
+//        QWidget *infoWidget = new QWidget();
+//        QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
+//        infoWidget->setStyleSheet("background-color: #FFA07A;");
+
+//        // Création et configuration de nameAdressTimeWidget
+//        QWidget *nameAdressTimeWidget = new QWidget();
+//        QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
+//        nameAdressTimeWidget->setStyleSheet("background-color: #FFFF00;");
+//        addInfoLabels(nameAdressTimeLayout, item);
+
+//        // Configuration de l'image
+//        QLabel *imageLabel = new QLabel();
+//        imageLabel->setPixmap(QPixmap(":/images/basket.jpg").scaled(150, 150));
+//        infoLayout->addWidget(imageLabel);
+//        nameAdressTimeLayout->addStretch(1);
+//        infoLayout->addWidget(nameAdressTimeWidget);
+
+//        itemLayout->addWidget(infoWidget);
+
+//        // Ajout des détails et connexion du signal clicked
+//        QString briefInfo = item.getNom() + " - " + item.getAdresse();
+//        QLabel *infoLabel = new QLabel(briefInfo);
+//        configureLabel(infoLabel);  // Fonction à définir pour configurer le label
+//        itemLayout->addWidget(infoLabel);
+
+//        QString details = constructDetailsString(item);  // Fonction à définir pour construire la chaîne de détails
+//        itemWidget->setDetails(details);
+//        connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
+
+//        scrollAreaLayout->addWidget(itemWidget);
+//    }
+//---------------------------------------------------------------------------------------------------
     template <typename T>
     void addItemToScrollArea(const T &item)
     {
+        // Utilisation de ClickableWidget pour la gestion des clics
         ClickableWidget *itemWidget = new ClickableWidget();
-        QString briefInfo = item.getNom() + " - " + item.getAdresse();
-        QString details = constructDetailsString(item);
+        QVBoxLayout *itemLayout = new QVBoxLayout(itemWidget);
+        itemWidget->setStyleSheet("background-color: #7FFFD4;");
 
-        QLabel *infoLabel = new QLabel(briefInfo);
-        configureLabel(infoLabel);
+        // Création et configuration de l'infoWidget
+        QWidget *infoWidget = new QWidget();
+        QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
+        infoWidget->setStyleSheet("background-color: #FFA07A;");
 
-        QVBoxLayout *itemLayout = new QVBoxLayout();
-        itemLayout->addWidget(infoLabel);
-        itemWidget->setLayout(itemLayout);
+        // Création et configuration de nameAdressTimeWidget
+        QWidget *nameAdressTimeWidget = new QWidget();
+        QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
+        nameAdressTimeWidget->setStyleSheet("background-color: #FFFF00;");
+        addInfoLabels(nameAdressTimeLayout, item);
 
+        // Configuration de l'image
+        QLabel *imageLabel = new QLabel();
+        imageLabel->setPixmap(QPixmap(":/images/basket.jpg").scaled(150, 150));
+        infoLayout->addWidget(imageLabel);
+        nameAdressTimeLayout->addStretch(1);
+        infoLayout->addWidget(nameAdressTimeWidget);
+
+        itemLayout->addWidget(infoWidget);
+
+        // Suppression de l'ajout redondant des informations
+        // Suppression de la création et de l'ajout de infoLabel redondant
+        // QLabel *infoLabel = new QLabel(briefInfo);
+        // configureLabel(infoLabel);  // Fonction à définir pour configurer le label
+        // itemLayout->addWidget(infoLabel);
+
+        // Ajout des détails et connexion du signal clicked
+        QString details = constructDetailsString(item);  // Fonction à définir pour construire la chaîne de détails
         itemWidget->setDetails(details);
         connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
 
         scrollAreaLayout->addWidget(itemWidget);
     }
+
 
 
     // Méthode pour ajouter les labels spécifiques à l'épreuve ou au restaurant
