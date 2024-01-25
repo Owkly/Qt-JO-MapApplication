@@ -29,9 +29,10 @@ public:
 
 private slots:
     // Méthodes de slots pour les interactions de l'interface utilisateur
-    void openInfoMain();     // Ouvre l'onglet principal d'informations
-    void openMapMain();      // Ouvre l'onglet de la carte
-    void openDetailedInfo(); // Ouvre une fenêtre détaillée pour plus d'informations
+    void openInfoMain();
+    void openMapMain();
+    void openDetailedInfo();
+    void searchItem();
 
 private:
     // Attributs
@@ -40,7 +41,8 @@ private:
     QVector<Restaurant> listeRestaurants;
     QVBoxLayout *scrollAreaLayout;
 
-    // Ajout tout les items (épreuves/restau) à la scrollAreaLayout
+    // Méthodes
+    // Méthode pour ajouter tout les items (épreuves/restau) à la scrollAreaLayout
     template <typename T>
     void setupItemsScrollArea(const QVector<T> &listeItems)
     {
@@ -49,34 +51,39 @@ private:
             addItemToScrollArea(item);
         }
     }
-    // Méthode pour ajouter un item (épreuve/restau) à la scrollAreaLayout
+
     template <typename T>
     void addItemToScrollArea(const T &item)
     {
+        // scrollAreaLayout->setSpacing(0);
+        // scrollAreaLayout->setContentsMargins(0, 0, 0, 0);
+
         QWidget *itemWidget = new QWidget();
+        QVBoxLayout *itemLayout = new QVBoxLayout(itemWidget);
+        // itemLayout->setSpacing(0);
+        // itemLayout->setContentsMargins(0, 0, 0, 0);
+        itemWidget->setStyleSheet("background-color: #7FFFD4;");
 
-        QVBoxLayout *itemLayout = new QVBoxLayout();           // Layout (1) vertical pour chaque item
-        QHBoxLayout *infolayout = new QHBoxLayout();           // Layout (2) horizontal pour les infos (image, nom, adresse, horaire) de chaque item
-        QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(); // Layout (3) vertical pour infos (nom, adresse, horaire) de chaque item
+        QWidget *infoWidget = new QWidget();
+        QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
+        infoWidget->setStyleSheet("background-color: #FFA07A;");
+        // infoLayout->setSpacing(0);
+        // infoLayout->setContentsMargins(0, 0, 0, 0);
 
-        // Ajout des infos (nom, adresse, horaire) au Layout (3)
+        QWidget *nameAdressTimeWidget = new QWidget();
+        QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
+        nameAdressTimeWidget->setStyleSheet("background-color: #FFFF00;");
+        // nameAdressTimeLayout->setSpacing(0);
+        // nameAdressTimeLayout->setContentsMargins(0, 0, 0, 0);
         addInfoLabels(nameAdressTimeLayout, item);
 
-        // Ajout du Layout (3) au Layout (2)
-        infolayout->addLayout(nameAdressTimeLayout);
+        QLabel *imageLabel = new QLabel();
+        imageLabel->setPixmap(QPixmap(":/images/basket.jpg").scaled(150, 150));
+        infoLayout->addWidget(imageLabel);
+        nameAdressTimeLayout->addStretch(1);
+        infoLayout->addWidget(nameAdressTimeWidget);
 
-        // Ajout de l'image de au Layout (2)
-        QLabel *imageLabel = new QLabel;
-        imageLabel->setPixmap(QPixmap(":/images/basket.jpg").scaled(50, 50)); // Ou item.getImage()
-        infolayout->addWidget(imageLabel);
-
-        // Ajout du Layout (2) au Layout (1)
-        itemLayout->addLayout(infolayout);
-
-        // Ajout du Layout (1) au widget de l'item
-        itemWidget->setLayout(itemLayout);
-
-        // Ajout du widget de l'item au Layout de la scrollArea
+        itemLayout->addWidget(infoWidget);
         scrollAreaLayout->addWidget(itemWidget);
     }
 
@@ -93,8 +100,10 @@ private:
             addRestaurantLabels(nameAdressTimeLayout, item); // nom, adresse, plageHoraire
         }
     }
+
     void addEpreuveLabels(QVBoxLayout *nameAdressTimeLayout, const Epreuve &epreuve);
     void addRestaurantLabels(QVBoxLayout *nameAdressTimeLayout, const Restaurant &restaurant);
-
     void configureLabel(QLabel *label);
+    void addVerticalSpacerToEnd();
+    void clearScrollArea();
 };

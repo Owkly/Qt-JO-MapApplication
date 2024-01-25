@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>794</width>
-    <height>600</height>
+    <width>828</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,37 +15,10 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <layout class="QHBoxLayout" name="menuLayout">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="leftMargin">
-       <number>50</number>
-      </property>
-      <property name="rightMargin">
-       <number>50</number>
-      </property>
-      <item>
-       <widget class="QPushButton" name="openInfoMainButton">
-        <property name="text">
-         <string>Infos</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="openMapMainButton">
-        <property name="text">
-         <string>Map</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="homePage">
        <widget class="QTextEdit" name="welcomeMessage">
@@ -68,27 +41,130 @@ p, li { white-space: pre-wrap; }
        </widget>
       </widget>
       <widget class="QWidget" name="infoPage">
-       <layout class="QGridLayout" name="gridLayout_2">
+       <layout class="QGridLayout" name="infoPageLayout" rowstretch="1,10">
+        <property name="leftMargin">
+         <number>50</number>
+        </property>
+        <property name="topMargin">
+         <number>50</number>
+        </property>
+        <property name="rightMargin">
+         <number>50</number>
+        </property>
+        <property name="bottomMargin">
+         <number>10</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>40</number>
+        </property>
         <item row="0" column="0" colspan="2">
          <layout class="QHBoxLayout" name="searchLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <property name="leftMargin">
+           <number>5</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
-           <widget class="QLineEdit" name="inputArea"/>
+           <widget class="QLineEdit" name="inputArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="filterComboBox">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Tout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Restaurants</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Epreuves</string>
+             </property>
+            </item>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="searchButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
             <property name="text">
              <string>search</string>
             </property>
            </widget>
           </item>
          </layout>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="openDetailedInfoButton">
-          <property name="text">
-           <string>Détails</string>
-          </property>
-         </widget>
         </item>
         <item row="1" column="1">
          <widget class="QScrollArea" name="scrollArea">
@@ -100,10 +176,29 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>670</width>
-             <height>452</height>
+             <width>702</width>
+             <height>330</height>
             </rect>
            </property>
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <widget class="QPushButton" name="openDetailedInfoButton">
+            <property name="geometry">
+             <rect>
+              <x>240</x>
+              <y>10</y>
+              <width>80</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Détails</string>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>
@@ -112,6 +207,45 @@ p, li { white-space: pre-wrap; }
       <widget class="QWidget" name="mapPage"/>
      </widget>
     </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="menuLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>55</number>
+      </property>
+      <property name="rightMargin">
+       <number>48</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="openInfoMainButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Infos</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openMapMainButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Map</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -119,7 +253,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>794</width>
+     <width>828</width>
      <height>22</height>
     </rect>
    </property>
