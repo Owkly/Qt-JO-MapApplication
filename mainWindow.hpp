@@ -163,19 +163,47 @@ QString constructDetailsString(const T &item)
     // Information div
     details += "<div class='info'>";
 
+//    if constexpr (std::is_same<T, Event>::value)
+//    {
+//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
+//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
+//                   "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
+//                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €</p>";
+//    }
+//    else if constexpr (std::is_same<T, Restaurant>::value)
+//    {
+//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
+//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
+//                   "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
+//                   "<b>Spécialité:</b> " + item.getSpecialty() + "</p>";
+//    }
     if constexpr (std::is_same<T, Event>::value)
     {
+        QStringList transportList = QStringList::fromVector(item.getTransportation());
+        QString transports = transportList.join(", ");
+
         details += "<p><b>Nom:</b> " + item.getName() + "<br>"
                    "<b>Adresse:</b> " + item.getAddress() + "<br>"
                    "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
-                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €</p>";
+                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €<br>"
+                   "<b>Description:</b> " + item.getDescription() + "<br>"
+                   "<b>Transports:</b> " + transports + "</p>";
     }
     else if constexpr (std::is_same<T, Restaurant>::value)
     {
+        QVector<int> proximityEvents = item.getNearbyEvents();
+        QStringList proximityEventsList;
+        for (int event : proximityEvents) {
+            proximityEventsList.append(QString::number(event));
+        }
+        QString proximityEventsString = proximityEventsList.join(", ");
+
         details += "<p><b>Nom:</b> " + item.getName() + "<br>"
                    "<b>Adresse:</b> " + item.getAddress() + "<br>"
                    "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
-                   "<b>Spécialité:</b> " + item.getSpecialty() + "</p>";
+                   "<b>Spécialité:</b> " + item.getSpecialty() + "<br>"
+                   "<b>Description:</b> " + item.getDescription() + "<br>"
+                   "<b>Proximité Epreuve:</b> " + proximityEventsString + "</p>";
     }
 
     // On ferme le info div
