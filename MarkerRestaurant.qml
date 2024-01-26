@@ -1,7 +1,8 @@
+// MarkerRectangle.qml
 import QtQuick 2.0
 
 Item {
-    property string markerId: "" // Ajouter une propriété personnalisée
+    property string markerId: ""
 
     width: 30
     height: 30
@@ -22,7 +23,7 @@ Item {
 
         Text {
             id: tooltip
-            text: markerId // Utiliser la propriété personnalisée
+            text: markerId
             color: "black"
         }
     }

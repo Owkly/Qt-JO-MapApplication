@@ -1,7 +1,8 @@
+// MarkerLocation.qml
 import QtQuick 2.0
 
 Item {
-    property string markerId: "" // Ajouter une propriété personnalisée
+    property string markerId: ""
 
     width: 30
     height: 30

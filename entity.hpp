@@ -1,6 +1,5 @@
 // entity.hpp
 #pragma once
-
 #include <QString>
 
 class Entity {
@@ -12,7 +11,7 @@ public:
     // Getters
     int getId() const { return id; }
 
-    // Méhode virtuelle pure
+    // Méhode virtuelle pure pour afficher les détails d'un objet
     virtual void display() const = 0;
 
 protected:

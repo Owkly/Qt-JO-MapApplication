@@ -3,7 +3,6 @@
 #include "entity.hpp"
 #include <QPixmap>
 #include <QVector>
-#include <QString>
 #include <QDebug>
 
 class Location : public Entity {
@@ -20,12 +19,13 @@ public:
     QString getLocationImage() const { return locationImage; }
     QVector<QString> getTransportation() const { return transportation; }
 
-    // Méthode
+    // Méthode virtuelle pure redéfinie
     void display() const override {
-        qDebug() << "Location " << id << " : " << name << " (" << address << ")";
-        // qDebug() << "Description : " << description;
-        // qDebug() << "Image : " << locationImage;
-        // qDebug() << "Transportation : " << transportation;
+        qDebug() << "Location " << id << " : " << name;
+        qDebug() << "Adresse : " << address;
+        qDebug() << "Description : " << description;
+        qDebug() << "Image lieu : " << locationImage;
+        qDebug() << "Transports : " << transportation;
     }
 
 protected:

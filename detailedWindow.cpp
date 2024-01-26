@@ -3,8 +3,8 @@
 #include "ui_detailedWindow.h"
 #include <QPushButton>
 
-DetailedWindow::DetailedWindow(QWidget *parent)
-    : QDialog(parent), ui(new Ui::DetailedWindow)
+// Constructeur
+DetailedWindow::DetailedWindow(QWidget *parent) : QDialog(parent), ui(new Ui::DetailedWindow)
 {
     ui->setupUi(this);
 
@@ -13,16 +13,19 @@ DetailedWindow::DetailedWindow(QWidget *parent)
     connect(okButton, &QPushButton::clicked, this, &DetailedWindow::closeDetailedWindow);
 }
 
+// Destructeur
 DetailedWindow::~DetailedWindow()
 {
     delete ui;
 }
 
+// Méthode pour afficher les détails d'un lieu dans une fenêtre de dialogue
 void DetailedWindow::setDetails(const QString &details)
 {
     ui->textBrowser->setHtml(details);
 }
 
+// Méthode pour fermer la fenêtre de dialogue
 void DetailedWindow::closeDetailedWindow()
 {
     this->close();

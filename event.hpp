@@ -17,10 +17,17 @@ public:
     double getTicketPrice() const { return ticketPrice; }
     QVector<int> getNearbyRestaurants() const { return nearbyRestaurants; }
 
-    // Méthodes
-    void display() const override
-    {
-        qDebug() << "Event " << id << " : " << name << " (" << address << ")";
+    // Méthodes virtual pure redéfinies
+    void display() const override{
+        qDebug() << "Event " << id << " : " << name;
+        qDebug() << "Adresse : " << address;
+        qDebug() << "Description : " << description;
+        qDebug() << "Image lieu : " << locationImage;
+        qDebug() << "Image épreuve : " << eventImage;
+        qDebug() << "Transports : " << transportation;
+        qDebug() << "Horaire de début : " << startTime.toString();
+        qDebug() << "Prix du billet : " << ticketPrice << "€";
+        qDebug() << "Id des Restaurants à proximité : " << nearbyRestaurants;
     }
 
 

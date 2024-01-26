@@ -1,6 +1,5 @@
 // dataManager.hpp
 #pragma once
-
 #include "event.hpp"
 #include "restaurant.hpp"
 
@@ -10,6 +9,8 @@
 #include <QJsonArray>
 #include <QDebug>
 
+#include <optional>
+
 class DataManager
 {
 public:
@@ -17,17 +18,24 @@ public:
     DataManager(const QString &jsonFilePath);
     ~DataManager();
 
-    // Méthodes pour convertir les données du fichier JSON en liste d'objets Epreuve ou Restaurant
-    QVector<Event> toListEvents();
-    QVector<Restaurant> toListRestaurants();
-	
-    // Méthode pour lire le fichier JSON  et convertir en QJsonArray
-    QJsonArray readJsonArray(const QString &key);
+    // Getters
+    QVector<Event> getListEvents() const { return listEvents; }
+    QVector<Restaurant> getListRestaurants() const { return listRestaurants; }
 
-    // Algorithme pour convertir les données du fichier JSON sous forme de QJsonArray en liste d'objets Epreuve ou Restaurant
-    QVector<Event> toListEventsAlgo(const QJsonArray &jsonArray);
-    QVector<Restaurant> toListRestaurantsAlgo(const QJsonArray &jsonArray);
+    // Méthodes
+    QVector<Event> searchEvents(const QString &searchText, const QString &filterType);
+    QVector<Restaurant> searchRestaurants(const QString &searchText, const QString &filterType);
 
 private:
+    // Attributs
     QString jsonFilePath;
+    QVector<Event> listEvents;
+    QVector<Restaurant> listRestaurants;
+
+    // Méthodes
+    QJsonArray readJsonArray(const QString &key);
+    Event toEvent(const QJsonObject &eventObj);
+    Restaurant toRestaurant(const QJsonObject &restaurantObj);
+    QVector<Event> toListEvents();
+    QVector<Restaurant> toListRestaurants();
 };
