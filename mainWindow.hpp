@@ -30,8 +30,10 @@ public:
 
 private slots:
     // Méthodes de slots pour les interactions de l'interface utilisateur
+    void openHomeMain();
     void openInfoMain();
     void openMapMain();
+    void closeMain();
     void openDetailedInfo();
     void searchItem();
     void showDetails(const QString &details);

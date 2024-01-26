@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Configuration de l'attribut ui (User Interface)
     ui->setupUi(this);
     this->setWindowTitle("JO 2024");
-    this->showMaximized();
+    this->showFullScreen();
 
     // Configuration des attributs listEvents et listRestaurants à partir du fichier JSON
     DataManager dataManager(":/lieux.json");
@@ -23,13 +23,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Connexion des signaux pour les boutons de navigation
     connect(ui->openInfoMainButton, SIGNAL(clicked()), this, SLOT(openInfoMain()));
     connect(ui->openMapMainButton, SIGNAL(clicked()), this, SLOT(openMapMain()));
+    connect(ui->openHomeMainButton, SIGNAL(clicked()), this, SLOT(openHomeMain()));
+    connect(ui->quitMainButton, SIGNAL(clicked()), this, SLOT(closeMain()));
     // Connexion des signaux pour la barre de recherche
     connect(ui->searchButton, SIGNAL(clicked()), this, SLOT(searchItem()));
     connect(ui->inputArea, SIGNAL(returnPressed()), this, SLOT(searchItem()));
     connect(ui->filterComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(searchItem()));
 
     // Configuration de la couleur de fond de la scrollArea
-    ui->scrollArea->setStyleSheet("QWidget { background-color: #fffae5; }");    
+    ui->scrollArea->setStyleSheet("QWidget { background-color: #fffbeb; }");    
 }
 
 MainWindow::~MainWindow()
@@ -37,6 +39,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::openHomeMain()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::closeMain()
+{
+    this->close();
+}
 // Méthode pour ouvrir la page d'information
 void MainWindow::openInfoMain()
 {
