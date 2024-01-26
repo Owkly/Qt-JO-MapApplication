@@ -16,5 +16,6 @@ DetailedWindow::~DetailedWindow()
 
 void DetailedWindow::setDetails(const QString &details)
 {
-    ui->textBrowser ->setText(details);
+//    ui->textBrowser ->setText(details);
+    ui->textBrowser ->setHtml(details);
 }

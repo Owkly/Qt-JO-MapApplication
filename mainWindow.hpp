@@ -120,21 +120,73 @@ private:
     void clearScrollArea();
 };
 
+//template <typename T>
+//QString constructDetailsString(const T &item)
+//{
+//    QString details;
+//    if constexpr (std::is_same<T, Event>::value)
+//    {
+//        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
+//                  "\nHoraire: " + item.getStartTime().toString() +
+//                  "\nPrix Billet: " + QString::number(item.getTicketPrice()) + "\n...";
+//    }
+//    else if constexpr (std::is_same<T, Restaurant>::value)
+//    {
+//        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
+//                  "\nPlage Horaire: " + item.getOpeningHours() + "\nSpécialité: " + item.getSpecialty() + "\n...";
+//    }
+//    return details;
+//}
+
 template <typename T>
 QString constructDetailsString(const T &item)
 {
     QString details;
+    QString imagePath = item.getLocationImage(); // Make sure this returns the correct image path
+
+    // Start with an HTML string for the details
+    details = "<html><head><style>"
+              "div.container { display: flex; align-items: flex-start; } "
+              "div.image { width: 300; } "
+              "div.info { width: 300; } "
+              "</style></head><body>";
+
+    details += "<div class='container'>";
+
+    // Add the image using an HTML img tag if the path is not empty
+    if (!imagePath.isEmpty())
+    {
+        // Ensure the image path is correct and accessible by the application
+        details += "<div class='image'><img src=\"" + imagePath + "\" width=\"500\" height=\"300\" style=\"display: block;\" /></div>";
+    }
+
+    // Information div
+    details += "<div class='info'>";
+
     if constexpr (std::is_same<T, Event>::value)
     {
-        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
-                  "\nHoraire: " + item.getStartTime().toString() +
-                  "\nPrix Billet: " + QString::number(item.getTicketPrice()) + "\n...";
+        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
+                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
+                   "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
+                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €</p>";
     }
     else if constexpr (std::is_same<T, Restaurant>::value)
     {
-        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
-                  "\nPlage Horaire: " + item.getOpeningHours() + "\nSpécialité: " + item.getSpecialty() + "\n...";
+        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
+                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
+                   "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
+                   "<b>Spécialité:</b> " + item.getSpecialty() + "</p>";
     }
+
+    // Close the info div
+    details += "</div>"; // Close div.info
+
+    // Close the container div
+    details += "</div>"; // Close div.container
+
+    // Close the HTML tags
+    details += "</body></html>";
+
     return details;
 }
 
