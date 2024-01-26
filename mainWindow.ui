@@ -21,7 +21,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="homePage">
        <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0">
@@ -269,8 +269,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>16</width>
-             <height>16</height>
+             <width>98</width>
+             <height>28</height>
             </rect>
            </property>
            <property name="mouseTracking">

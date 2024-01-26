@@ -63,16 +63,21 @@ void MainWindow::openInfoMain()
 void MainWindow::openMapMain()
 {
     ui->stackedWidget->setCurrentIndex(2);
-    if (ui->mapViewWidget != nullptr)
-    {
-        ui->mapViewWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
-        ui->mapViewWidget->show();
-    }
-    else
-    {
-        // Gérer l'erreur : le widget mapViewWidget est null
-        qDebug() << "Erreur : le widget mapViewWidget est null";
-    }
+    // if (ui->mapViewWidget != nullptr)
+    // {
+    //     qDebug() << "ui->mapViewWidget n'est pas null";
+    //     QUrl mapUrl = QUrl(QStringLiteral("qrc:/map.qml"));
+        // ui->mapViewWidget->setSource(mapUrl);
+        // ui->mapViewWidget->show();
+    // }
+    // else
+    // {
+    //     // Gérer l'erreur : le widget mapViewWidget est null
+    //     qDebug() << "Erreur : le widget mapViewWidget est null";
+    // }
+
+    ui->mapViewWidget->setSource(QUrl(QStringLiteral("qrc:/Map.qml")));
+    ui->mapViewWidget->show();
 }
 
 // Méthode pour voir les détails d'une épreuve ou d'un restaurant dans la page d'information

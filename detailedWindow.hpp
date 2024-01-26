@@ -17,6 +17,9 @@ public:
     ~DetailedWindow();
     void setDetails(const QString &details);
 
+private slots:
+    void closeDetailedWindow();
+    
 private:
     Ui::DetailedWindow *ui;
 };

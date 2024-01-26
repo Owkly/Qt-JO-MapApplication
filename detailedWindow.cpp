@@ -1,12 +1,16 @@
 // detailedWindow.cpp
 #include "detailedWindow.hpp"
 #include "ui_detailedWindow.h"
+#include <QPushButton>
 
-DetailedWindow::DetailedWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DetailedWindow)
+DetailedWindow::DetailedWindow(QWidget *parent)
+    : QDialog(parent), ui(new Ui::DetailedWindow)
 {
     ui->setupUi(this);
+
+    // Trouver le bouton "Ok" dans le QDialogButtonBox s'il est cliqué, fermer la fenêtre
+    QPushButton *okButton = ui->DialogOkButton->button(QDialogButtonBox::Ok);
+    connect(okButton, &QPushButton::clicked, this, &DetailedWindow::closeDetailedWindow);
 }
 
 DetailedWindow::~DetailedWindow()
@@ -16,6 +20,10 @@ DetailedWindow::~DetailedWindow()
 
 void DetailedWindow::setDetails(const QString &details)
 {
-//    ui->textBrowser ->setText(details);
-    ui->textBrowser ->setHtml(details);
+    ui->textBrowser->setHtml(details);
+}
+
+void DetailedWindow::closeDetailedWindow()
+{
+    this->close();
 }

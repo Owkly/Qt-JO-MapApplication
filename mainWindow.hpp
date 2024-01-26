@@ -61,7 +61,7 @@ private:
     template <typename T>
     void addItemToScrollArea(const T &item)
     {
-        // Création d'un itemWidget et de son layout (1) qui contiendra la mise en page des items
+        // Création d'un itemWidget et de son layout (1) qui contiendra la mise en page des items ce widget sera cliquable
         ClickableWidget *itemWidget = new ClickableWidget();
         QVBoxLayout *itemLayout = new QVBoxLayout(itemWidget);
         itemWidget->setStyleSheet("background-color: #DCB253; " // jaune/orange
@@ -93,11 +93,12 @@ private:
         // Ajout du layout (2) au layout (1)
         itemLayout->addWidget(infoWidget);
 
-        // Ajout du layout (1) au scrollAreaLayout en le rendant cliquable
+        // Configure la fenêtre détaillée associée à l'item
         QString details = constructDetailsString(item, listEvents, listRestaurants);
         itemWidget->setDetails(details);
         connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
 
+        // Ajout du layout (1) au scrollAreaLayout
         scrollAreaLayout->addWidget(itemWidget);
     }
 

@@ -2,7 +2,7 @@ TEMPLATE = app
 TARGET = Projet_Jeux_Olympiques
 INCLUDEPATH += .
 
-QT += core gui widgets quickwidgets location
+QT += core gui widgets quick quickwidgets location positioning
 
 
 SOURCES += main.cpp \

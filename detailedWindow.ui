@@ -17,6 +17,16 @@
    <item row="0" column="0">
     <widget class="QTextBrowser" name="textBrowser"/>
    </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="DialogOkButton">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
