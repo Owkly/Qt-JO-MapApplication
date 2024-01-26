@@ -23,6 +23,7 @@ public:
         qDebug() << "Event " << id << " : " << name << " (" << address << ")";
     }
 
+
 private:
     // Attributes
     QString eventImage;
