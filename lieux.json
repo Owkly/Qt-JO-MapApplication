@@ -298,7 +298,7 @@
                 "nom": "Finale Escrime France/Russie hommes",
                 "adresse": "Gymnase Buffault, 26 Rue Buffault, Paris",
                 "description": "Finale d'escrime par equipe opposant la France à la Russie",
-                "image_lieu": ":/images/gymnase_buffault.jpg",
+                "image_lieu": ":/images/gymnase_escrime.png",
                 "image_epreuve": ":/images/escrime.jpg",
                 "transports": [
                     "Ligne 7",
