@@ -31,14 +31,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->filterComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(searchItem()));
 
     // Configuration de la couleur de fond de la scrollArea
-    ui->scrollArea->setStyleSheet("QWidget { background-color: #fffbeb; }");    
+    ui->scrollArea->setStyleSheet("QWidget { background-color: #fffbeb; }");
+    // ui->mapViewWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
+    // ui->mapViewWidget->show();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::openHomeMain()
 {
@@ -62,6 +63,16 @@ void MainWindow::openInfoMain()
 void MainWindow::openMapMain()
 {
     ui->stackedWidget->setCurrentIndex(2);
+    if (ui->mapViewWidget != nullptr)
+    {
+        ui->mapViewWidget->setSource(QUrl(QStringLiteral("qrc:/map.qml")));
+        ui->mapViewWidget->show();
+    }
+    else
+    {
+        // Gérer l'erreur : le widget mapViewWidget est null
+        qDebug() << "Erreur : le widget mapViewWidget est null";
+    }
 }
 
 // Méthode pour voir les détails d'une épreuve ou d'un restaurant dans la page d'information

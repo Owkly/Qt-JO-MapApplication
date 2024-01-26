@@ -32,6 +32,9 @@
         <file>images/palais_sports.jpg</file>
         <file>images/grand_palais.jpg</file>  
         <file>images/gymnase_escrime.png</file>
+
         <file>lieux.json</file> 
+
+        <file>map.qml</file>
     </qresource>
 </RCC>
