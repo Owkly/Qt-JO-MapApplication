@@ -56,6 +56,8 @@ private:
         }
     }
 
+
+
     template <typename T>
     void addItemToScrollArea(const T &item)
     {
@@ -92,7 +94,7 @@ private:
         itemLayout->addWidget(infoWidget);
 
         // Ajout du layout (1) au scrollAreaLayout en le rendant cliquable
-        QString details = constructDetailsString(item, listEvents);
+        QString details = constructDetailsString(item, listEvents, listRestaurants);
         itemWidget->setDetails(details);
         connect(itemWidget, &ClickableWidget::clicked, this, &MainWindow::showDetails);
 
@@ -120,174 +122,26 @@ private:
     void clearScrollArea();
 };
 
-//template <typename T>
-//QString constructDetailsString(const T &item)
-//{
-//    QString details;
-//    if constexpr (std::is_same<T, Event>::value)
-//    {
-//        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
-//                  "\nHoraire: " + item.getStartTime().toString() +
-//                  "\nPrix Billet: " + QString::number(item.getTicketPrice()) + "\n...";
-//    }
-//    else if constexpr (std::is_same<T, Restaurant>::value)
-//    {
-//        details = "Nom: " + item.getName() + "\nAdresse: " + item.getAddress() +
-//                  "\nPlage Horaire: " + item.getOpeningHours() + "\nSpécialité: " + item.getSpecialty() + "\n...";
-//    }
-//    return details;
-//}
-//-----------------------------------------------------------------------------------
-
-//-------------------Optimal pour l'instant MAIS QUE LES ID PAS LES NOMS-------------
-//template <typename T>
-//QString constructDetailsString(const T &item)
-//{
-//    QString details;
-//    QString imagePath = item.getLocationImage(); // Make sure this returns the correct image path
-
-
-//    details = "<html><head><style>"
-//              "div.container { display: flex; align-items: flex-start; } "
-//              "div.image { width: 300; } "
-//              "div.info { width: 300; } "
-//              "</style></head><body>";
-
-//    details += "<div class='container'>";
-
-//    // Ajouter l'image uniquement si le chemin n'est pas vide
-//    if (!imagePath.isEmpty())
-//    {
-//        //
-//        details += "<div class='image'><img src=\"" + imagePath + "\" width=\"500\" height=\"300\" style=\"display: block;\" /></div>";
-//    }
-
-//    // Information div
-//    details += "<div class='info'>";
-
-////    if constexpr (std::is_same<T, Event>::value)
-////    {
-////        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-////                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-////                   "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
-////                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €</p>";
-////    }
-////    else if constexpr (std::is_same<T, Restaurant>::value)
-////    {
-////        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-////                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-////                   "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
-////                   "<b>Spécialité:</b> " + item.getSpecialty() + "</p>";
-////    }
-//    if constexpr (std::is_same<T, Event>::value)
-//    {
-//        QStringList transportList = QStringList::fromVector(item.getTransportation());
-//        QString transports = transportList.join(", ");
-
-//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-//                   "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
-//                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €<br>"
-//                   "<b>Description:</b> " + item.getDescription() + "<br>"
-//                   "<b>Transports:</b> " + transports + "</p>";
-//    }
-//    else if constexpr (std::is_same<T, Restaurant>::value)
-//    {
-//        QVector<int> proximityEvents = item.getNearbyEvents();
-//        QStringList proximityEventsList;
-
-
-//        for (int event : proximityEvents) {
-//            proximityEventsList.append(QString::number(event));
-//        }
-//        QString proximityEventsString = proximityEventsList.join(", ");
-
-//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-//                   "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
-//                   "<b>Spécialité:</b> " + item.getSpecialty() + "<br>"
-//                   "<b>Description:</b> " + item.getDescription() + "<br>"
-//                   "<b>Proximité Epreuve:</b> " + proximityEventsString + "</p>";
-//    }
-
-
-
-//    // On ferme le info div
-//    details += "</div>";
-
-//    // On ferme le div container
-//    details += "</div>";
-
-//    // On ferme les html tags
-//    details += "</body></html>";
-
-//    return details;
-//}
-//------------------------------------------------------------------------
-
-//------------------------------------------------------------------------
-//template <typename T>
-//QString constructDetailsString(const T &item, const QVector<Event>& allEvents)
-//{
-//    QString details;
-//    QString imagePath = item.getLocationImage(); // Assurez-vous que cela renvoie le bon chemin d'image
-
-//    details = "<html><head><style>"
-//              "div.container { display: flex; align-items: flex-start; } "
-//              "div.image { width: 300; } "
-//              "div.info { width: 300; } "
-//              "</style></head><body>";
-
-//    details += "<div class='container'>";
-
-//    // Ajouter l'image uniquement si le chemin n'est pas vide
-//    if (!imagePath.isEmpty())
-//    {
-//        details += "<div class='image'><img src=\"" + imagePath + "\" width=\"500\" height=\"300\" style=\"display: block;\" /></div>";
-//    }
-
-//    // Div d'information
-//    details += "<div class='info'>";
-
-//    if constexpr (std::is_same_v<T, Event>)
-//    {
-//        QStringList transportList = QStringList::fromVector(item.getTransportation());
-//        QString transports = transportList.join(", ");
-
-//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-//                   "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
-//                   "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €<br>"
-//                   "<b>Description:</b> " + item.getDescription() + "<br>"
-//                   "<b>Transports:</b> " + transports + "</p>";
-//    }
-//    else if constexpr (std::is_same_v<T, Restaurant>)
-//    {
-//        QStringList nearbyEventNames = item.getNearbyEventNames(allEvents);
-//        QString nearbyEventsString = nearbyEventNames.join(", ");
-
-//        details += "<p><b>Nom:</b> " + item.getName() + "<br>"
-//                   "<b>Adresse:</b> " + item.getAddress() + "<br>"
-//                   "<b>Plage Horaire:</b> " + item.getOpeningHours() + "<br>"
-//                   "<b>Spécialité:</b> " + item.getSpecialty() + "<br>"
-//                   "<b>Description:</b> " + item.getDescription() + "<br>"
-//                   "<b>Proximité Épreuve:</b> " + nearbyEventsString + "</p>";
-//    }
-
-//    // Fermeture du div d'information
-//    details += "</div>";
-
-//    // Fermeture du div conteneur
-//    details += "</div>";
-
-//    // Fermeture des balises HTML
-//    details += "</body></html>";
-
-//    return details;
-//}
-//---------------------------------------------------------------
+//Obtention du nom de la location (event ou restaurant) à partir de son Id
 template <typename T>
-QString constructDetailsString(const T &item, const QVector<Event>& allEvents)
+QStringList getNearbyItemNames(const QVector<T>& items, const QVector<int>& nearbyIds)
+{
+    QStringList itemNames;
+    for (int itemId : nearbyIds) {
+        for (const T& item : items) {
+            if (item.getId() == itemId) {
+                itemNames.append(item.getName());
+                break;
+            }
+        }
+    }
+    return itemNames;
+}
+
+
+//Création de la fenetre détaillée
+template <typename T>
+QString constructDetailsString(const T &item, const QVector<Event>& allEvents, const QVector<Restaurant>& allRestaurants)
 {
     QString details;
     QString imagePath = item.getLocationImage();
@@ -314,16 +168,21 @@ QString constructDetailsString(const T &item, const QVector<Event>& allEvents)
         QStringList transportList = QStringList::fromVector(item.getTransportation());
         QString transports = transportList.join(", ");
 
+        // Obtenez les noms des restaurants à proximité des épreuves
+        QStringList nearbyRestaurantNames = getNearbyItemNames(allRestaurants, item.getNearbyRestaurants());
+        QString nearbyRestaurantsString = nearbyRestaurantNames.join(", ");
+
         details += "<p><b>Nom:</b> " + item.getName() + "<br>"
                    "<b>Adresse:</b> " + item.getAddress() + "<br>"
                    "<b>Horaire:</b> " + item.getStartTime().toString("hh:mm dd-MM-yyyy") + "<br>"
                    "<b>Prix Billet:</b> " + QString::number(item.getTicketPrice()) + " €<br>"
                    "<b>Description:</b> " + item.getDescription() + "<br>"
-                   "<b>Transports:</b> " + transports + "</p>";
+                   "<b>Transports:</b> " + transports + "<br>"
+                   "<b>Restaurants à proximité:</b> " + nearbyRestaurantsString + "</p>";
     }
     else if constexpr (std::is_same_v<T, Restaurant>)
     {
-        QStringList nearbyEventNames = item.getNearbyEventNames(allEvents);
+        QStringList nearbyEventNames = getNearbyItemNames(allEvents, item.getNearbyEvents());
         QString nearbyEventsString = nearbyEventNames.join(", ");
 
         details += "<p><b>Nom:</b> " + item.getName() + "<br>"
@@ -345,7 +204,6 @@ QString constructDetailsString(const T &item, const QVector<Event>& allEvents)
 
     return details;
 }
-
 
 
 

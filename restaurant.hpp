@@ -1,7 +1,7 @@
 // restaurant.hpp
 #pragma once
 #include "location.hpp"
-#include "event.hpp"
+//#include "event.hpp"
 #include <QDateTime>
 
 class Restaurant : public Location {
@@ -20,19 +20,6 @@ Restaurant(int id, const QString &name, const QString &address, const QString &d
     // Méthodes
     void display() const override {
         qDebug() << "Restaurant " << id << " : " << name << " (" << address << ")";
-    }
-
-    QStringList getNearbyEventNames(const QVector<Event>& events) const {
-        QStringList eventNames;
-        for (int eventId : nearbyEvents) {
-            for (const Event& event : events) {
-                if (event.getId() == eventId) {
-                    eventNames.append(event.getName());
-                    break;
-                }
-            }
-        }
-        return eventNames;
     }
 
 
