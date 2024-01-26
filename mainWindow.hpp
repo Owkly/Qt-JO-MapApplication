@@ -144,7 +144,7 @@ QString constructDetailsString(const T &item)
     QString details;
     QString imagePath = item.getLocationImage(); // Make sure this returns the correct image path
 
-    // Start with an HTML string for the details
+
     details = "<html><head><style>"
               "div.container { display: flex; align-items: flex-start; } "
               "div.image { width: 300; } "
@@ -153,10 +153,10 @@ QString constructDetailsString(const T &item)
 
     details += "<div class='container'>";
 
-    // Add the image using an HTML img tag if the path is not empty
+    // Ajouter l'image uniquement si le chemin n'est pas vide
     if (!imagePath.isEmpty())
     {
-        // Ensure the image path is correct and accessible by the application
+        //
         details += "<div class='image'><img src=\"" + imagePath + "\" width=\"500\" height=\"300\" style=\"display: block;\" /></div>";
     }
 
@@ -178,13 +178,13 @@ QString constructDetailsString(const T &item)
                    "<b>Spécialité:</b> " + item.getSpecialty() + "</p>";
     }
 
-    // Close the info div
-    details += "</div>"; // Close div.info
+    // On ferme le info div
+    details += "</div>";
 
-    // Close the container div
-    details += "</div>"; // Close div.container
+    // On ferme le div container
+    details += "</div>";
 
-    // Close the HTML tags
+    // On ferme les html tags
     details += "</body></html>";
 
     return details;
