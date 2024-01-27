@@ -10,7 +10,10 @@ class Location : public Entity
 {
 public:
     // Constructeur et destructeur
-    Location(int id, const QString &name, const QString &address, const QString &description, const QString &locationImage, const QVector<QString> &transportation) : Entity(id), name(name), address(address), description(description), locationImage(locationImage), transportation(transportation) {}
+    Location(const Location &other)
+        : Entity(other.id), name(other.name), address(other.address), description(other.description), locationImage(other.locationImage), transportation(other.transportation) {}
+    Location(int id, const QString &name, const QString &address, const QString &description, const QString &locationImage, const QVector<QString> &transportation)
+        : Entity(id), name(name), address(address), description(description), locationImage(locationImage), transportation(transportation) {}
     virtual ~Location() {}
 
     // Getters
@@ -33,6 +36,27 @@ public:
     // Méthode virtuelle qu'on peut redéfinir dans les classes filles
     virtual QString getPathForItem() const { return locationImage; }
 
+    // Virtual equality operator (==)
+    bool operator==(const Location &other) const
+    {
+        return (id == other.id && name == other.name && address == other.address && description == other.description && locationImage == other.locationImage && transportation == other.transportation);
+    }
+
+    // Virtual assignment operator (=)
+    Location &operator=(const Location &other)
+    {
+        if (this != &other)
+        {
+            id = other.id;
+            name = other.name;
+            address = other.address;
+            description = other.description;
+            locationImage = other.locationImage;
+            transportation = other.transportation;
+        }
+        return *this;
+    }
+
 protected:
     // Attributs
     QString name;
@@ -41,3 +65,4 @@ protected:
     QString locationImage;
     QVector<QString> transportation;
 };
+
