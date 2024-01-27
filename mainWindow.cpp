@@ -1,7 +1,7 @@
 // mainWindow.cpp
 #include "mainWindow.hpp"
 #include "ui_mainWindow.h"
-#include "detailedWindow.hpp"
+#include "detailedDialog.hpp"
 #include "dataManager.hpp"
 #include "event.hpp"
 
@@ -119,7 +119,7 @@ void MainWindow::clearScrollArea()
 
 // Méthode pour rechercher un item (épreuve ou restaurant) dans la scrollAreaLayout
 void MainWindow::searchItem()
-{   
+{
     // Récupération du texte de recherche et du filtre et suppression du contenu de la scrollAreaLayout
     QString searchText = ui->inputArea->text().trimmed();
     QString selectedFilter = ui->filterComboBox->currentText();
@@ -129,22 +129,134 @@ void MainWindow::searchItem()
     QVector<Event> filteredEvents = dataManager.searchEvents(searchText, selectedFilter);
     for (const Event &event : filteredEvents)
     {
-        addItemToScrollArea(event);
+        addEventToScrollArea(event);
     }
     QVector<Restaurant> filteredRestaurants = dataManager.searchRestaurants(searchText, selectedFilter);
     for (const Restaurant &restaurant : filteredRestaurants)
     {
-        addItemToScrollArea(restaurant);
+        addRestaurantToScrollArea(restaurant);
     }
 
     addVerticalSpacerToEnd();
 }
 
 // Méthode pour afficher dans un dialogue les détails de l'item sélectionné
-void MainWindow::showDetails(const QString &details)
+void MainWindow::openDetailedDialog(const QString &codeHTML)
 {
-    DetailedWindow detailedWindow(this);
-    detailedWindow.setModal(true);  // Bloque l'interaction avec la fenêtre principale tant que la fenêtre détaillée est ouverte
-    detailedWindow.setDetails(details);
-    detailedWindow.exec();
+    DetailedDialog detailedDialog(this);
+    detailedDialog.setModal(true); // Bloque l'interaction avec la fenêtre principale tant que la fenêtre détaillée est ouverte
+    detailedDialog.setDialogHTML(codeHTML);
+    detailedDialog.exec();
 }
+
+void MainWindow::addEventToScrollArea(const Event &event) {
+    ClickableWidget *eventWidget = new ClickableWidget();
+    QVBoxLayout *eventLayout = new QVBoxLayout(eventWidget);
+    eventWidget->setStyleSheet("background-color: #DCB253; " // jaune/orange
+                               "border: 3px solid #000000; "
+                               "border-radius: 6px; "
+                               "padding: 5px; "
+                               "margin: 5px;");
+    QWidget *infoWidget = new QWidget();
+    QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
+    QWidget *nameAdressTimeWidget = new QWidget();
+    QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
+    nameAdressTimeWidget->setStyleSheet("background-color: #4aa77c;"); // vert
+    addEventLabels(nameAdressTimeLayout, event);
+    QLabel *imageLabel = new QLabel();
+    QString imagePath = event.getPathForItem();
+    imageLabel->setPixmap(QPixmap(imagePath).scaled(150, 150));
+    infoLayout->addWidget(imageLabel);
+    nameAdressTimeLayout->addStretch(1);
+    infoLayout->addWidget(nameAdressTimeWidget);
+    eventLayout->addWidget(infoWidget);
+    // QString details = generateCodeHtmlForEventDetails(event);
+    QString details = DetailedDialog::generateEventDetailsHTML(event, dataManager.getNearbyRestaurantsNames(event.getNearbyRestaurants()));
+
+    eventWidget->setDetails(details);
+    connect(eventWidget, &ClickableWidget::clicked, this, &MainWindow::openDetailedDialog);
+    scrollAreaLayout->addWidget(eventWidget);
+}
+
+void MainWindow::addRestaurantToScrollArea(const Restaurant &restaurant) {
+    ClickableWidget *restaurantWidget = new ClickableWidget();
+    QVBoxLayout *restaurantLayout = new QVBoxLayout(restaurantWidget);
+    restaurantWidget->setStyleSheet("background-color: #DCB253; " // jaune/orange
+                                    "border: 3px solid #000000; "
+                                    "border-radius: 6px; "
+                                    "padding: 5px; "
+                                    "margin: 5px;");
+    QWidget *infoWidget = new QWidget();
+    QHBoxLayout *infoLayout = new QHBoxLayout(infoWidget);
+    QWidget *nameAdressTimeWidget = new QWidget();
+    QVBoxLayout *nameAdressTimeLayout = new QVBoxLayout(nameAdressTimeWidget);
+    nameAdressTimeWidget->setStyleSheet("background-color: #4aa77c;"); // vert
+    addRestaurantLabels(nameAdressTimeLayout, restaurant);
+    QLabel *imageLabel = new QLabel();
+    QString imagePath = restaurant.getPathForItem();
+    imageLabel->setPixmap(QPixmap(imagePath).scaled(150, 150));
+    infoLayout->addWidget(imageLabel);
+    nameAdressTimeLayout->addStretch(1);
+    infoLayout->addWidget(nameAdressTimeWidget);
+    restaurantLayout->addWidget(infoWidget);
+    // QString details = generateCodeHtmlForRestaurantDetails(restaurant);
+    QString details = DetailedDialog::generateRestaurantDetailsHTML(restaurant, dataManager.getNearbyEventsNames(restaurant.getNearbyEvents()));
+    restaurantWidget->setDetails(details);
+    connect(restaurantWidget, &ClickableWidget::clicked, this, &MainWindow::openDetailedDialog);
+    scrollAreaLayout->addWidget(restaurantWidget);
+}
+
+// QString MainWindow::generateCodeHtmlForEventDetails(const Event &event)
+// {
+//     QString codeHTML;
+
+//     codeHTML += "<html><head><style>"
+//                 "div.container { display: flex; align-items: flex-start; } "
+//                 "div.container > div { margin: 10px; } "
+//                 "div.image { width: 300px; } "
+//                 "div.info { width: 300px; margin-left: 10px; } "
+//                 "</style></head><body>"
+//                 "<div class='container'>"
+//                 "<div class='image'><img src='" + event.getLocationImage() + "' width='300' height='300'></div>"
+//                 "<div class='info'>"
+//                 "<p><b>Nom:</b> " + event.getName() + "</p>"
+//                 "<p><b>Adresse:</b> " + event.getAddress() + "</p>"
+//                 "<p><b>Date:</b> " + event.getStartTime().toString("dd/MM/yyyy") + "</p>"
+//                 "<p><b>Horaire:</b> " + event.getStartTime().toString("hh:mm") + "</p>"
+//                 "<p><b>Prix Billet:</b> " + QString::number(event.getTicketPrice()) + " €</p>"
+//                 "<p><b>Description:</b> " + event.getDescription() + "</p>"
+//                 "<p><b>Transports:</b> " + QStringList::fromVector(event.getTransportation()).join(", ") + "</p>"
+//                 "<p><b>Restaurants à proximité:</b> " + dataManager.getNearbyRestaurantsNames(event.getNearbyRestaurants()).join(", ") + "</p>"
+//                 "</div>"
+//                 "</div>"
+//                 "</body></html>";
+    
+//     return codeHTML;
+// }
+
+// QString MainWindow::generateCodeHtmlForRestaurantDetails(const Restaurant &restaurant)
+// {
+//     QString codeHTML;
+
+//     codeHTML += "<html><head><style>"
+//                 "div.container { display: flex; align-items: flex-start; } "
+//                 "div.container > div { margin: 10px; } "
+//                 "div.image { width: 300px; } "
+//                 "div.info { width: 300px; margin-left: 10px; } "
+//                 "</style></head><body>"
+//                 "<div class='container'>"
+//                 "<div class='image'><img src='" + restaurant.getLocationImage() + "' width='300' height='300'></div>"
+//                 "<div class='info'>"
+//                 "<p><b>Nom:</b> " + restaurant.getName() + "</p>"
+//                 "<p><b>Adresse:</b> " + restaurant.getAddress() + "</p>"
+//                 "<p><b>Horaires:</b> " + restaurant.getOpeningHours() + "</p>"
+//                 "<p><b>Spécialité:</b> " + restaurant.getSpecialty() + "</p>"
+//                 "<p><b>Description:</b> " + restaurant.getDescription() + "</p>"
+//                 "<p><b>Transports:</b> " + QStringList::fromVector(restaurant.getTransportation()).join(", ") + "</p>"
+//                 "<p><b>Épreuves à proximité:</b> " + dataManager.getNearbyEventsNames(restaurant.getNearbyEvents()).join(", ") + "</p>"
+//                 "</div>"
+//                 "</div>"
+//                 "</body></html>";
+    
+//     return codeHTML;
+// }

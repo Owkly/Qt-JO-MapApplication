@@ -2,7 +2,7 @@
 #include "dataManager.hpp"
 
 // Constructeur et Destructeur
-DataManager::DataManager(const QString &jsonFilePath) : jsonFilePath(jsonFilePath) 
+DataManager::DataManager(const QString &jsonFilePath) : jsonFilePath(jsonFilePath)
 {
     listEvents = toListEvents();
     listRestaurants = toListRestaurants();
@@ -97,10 +97,12 @@ QVector<Restaurant> DataManager::toListRestaurants()
 QVector<Event> DataManager::searchEvents(const QString &searchText, const QString &filterType)
 {
     QVector<Event> searchResults;
-    if (filterType == "Tout" || filterType == "Epreuves") {
-        for (const Event &event : listEvents) {
-            if (event.getName().contains(searchText, Qt::CaseInsensitive) || 
-                event.getAddress().contains(searchText, Qt::CaseInsensitive)) {
+    if (filterType == "Tout" || filterType == "Epreuves")
+    {
+        for (const Event &event : listEvents)
+        {
+            if (event.getName().contains(searchText, Qt::CaseInsensitive) || event.getAddress().contains(searchText, Qt::CaseInsensitive))
+            {
                 searchResults.append(event);
             }
         }
@@ -112,13 +114,53 @@ QVector<Event> DataManager::searchEvents(const QString &searchText, const QStrin
 QVector<Restaurant> DataManager::searchRestaurants(const QString &searchText, const QString &filterType)
 {
     QVector<Restaurant> searchResults;
-    if (filterType == "Tout" || filterType == "Restaurants") {
-        for (const Restaurant &restaurant : listRestaurants) {
-            if (restaurant.getName().contains(searchText, Qt::CaseInsensitive) || 
-                restaurant.getAddress().contains(searchText, Qt::CaseInsensitive)) {
+    if (filterType == "Tout" || filterType == "Restaurants")
+    {
+        for (const Restaurant &restaurant : listRestaurants)
+        {
+            if (restaurant.getName().contains(searchText, Qt::CaseInsensitive) || restaurant.getAddress().contains(searchText, Qt::CaseInsensitive))
+            {
                 searchResults.append(restaurant);
             }
         }
     }
     return searchResults;
+}
+
+// Méthode pour obtenir les noms des Events à proximité du lieu
+QStringList DataManager::getNearbyEventsNames(const QVector<int> &nearbyEventsIds) const
+{
+    QStringList nearbyEventsNames;
+    for (int eventId : nearbyEventsIds)
+    {
+        for (const Event &event : listEvents)
+        {
+            if (event.getId() == eventId)
+            {
+                nearbyEventsNames.append(event.getName());
+                break;
+                // ID unique donc pas besoin de continuer la boucle
+            }
+        }
+    }
+    return nearbyEventsNames;
+}
+
+// Méthode pour obtenir les noms des Restaurants à proximité du lieu
+QStringList DataManager::getNearbyRestaurantsNames(const QVector<int> &nearbyRestaurantsIds) const
+{
+    QStringList nearbyRestaurantsNames;
+    for (int restaurantId : nearbyRestaurantsIds)
+    {
+        for (const Restaurant &restaurant : listRestaurants)
+        {
+            if (restaurant.getId() == restaurantId)
+            {
+                nearbyRestaurantsNames.append(restaurant.getName());
+                break;
+                // ID unique donc pas besoin de continuer la boucle
+            }
+        }
+    }
+    return nearbyRestaurantsNames;
 }

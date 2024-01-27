@@ -25,6 +25,8 @@ public:
     // Méthodes
     QVector<Event> searchEvents(const QString &searchText, const QString &filterType);
     QVector<Restaurant> searchRestaurants(const QString &searchText, const QString &filterType);
+    QStringList getNearbyEventsNames(const QVector<int> &nearbyEventsIds) const;
+    QStringList getNearbyRestaurantsNames(const QVector<int> &nearbyRestaurantsIds) const;
 
 private:
     // Attributs

@@ -30,6 +30,9 @@ public:
         qDebug() << "Id des Restaurants à proximité : " << nearbyRestaurants;
     }
 
+    // Méthodes virtual redéfinies
+    QString getPathForItem() const override { return eventImage; }
+
 
 private:
     // Attributes

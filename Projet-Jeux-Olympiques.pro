@@ -8,8 +8,8 @@ QT += core gui widgets quick quickwidgets location positioning
 SOURCES += main.cpp \
            mainWindow.cpp \
            dataManager.cpp \
-           detailedWindow.cpp \
-           clickableWidget.cpp 
+           clickableWidget.cpp \
+           detailedDialog.cpp
 
 
 HEADERS += mainWindow.hpp \
@@ -18,11 +18,11 @@ HEADERS += mainWindow.hpp \
            event.hpp \
            restaurant.hpp \
            dataManager.hpp \
-           detailedWindow.hpp \
-           clickableWidget.hpp 
+           clickableWidget.hpp \
+           detailedDialog.hpp
 
 FORMS += mainWindow.ui \
-    detailedWindow.ui
+    detailedDialog.ui
 
 # List of resource files
 RESOURCES += ressources.qrc

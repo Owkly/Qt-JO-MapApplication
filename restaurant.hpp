@@ -29,6 +29,8 @@ public:
         qDebug() << "Id des épreuves à proximité : " << nearbyEvents;
     }
 
+    // Pas besoin de redéfinir getPathForItem() car on utilise l'attribut locationImage de la classe mère
+
 private:
     // Attributes
     QString openingHours;
