@@ -1,7 +1,8 @@
 // restaurant.hpp
 #pragma once
-#include "location.hpp"
 #include <QDateTime>
+
+#include "location.hpp"
 
 class Restaurant : public Location
 {
@@ -16,7 +17,7 @@ public:
     QString getSpecialty() const { return specialty; }
     QVector<int> getNearbyEvents() const { return nearbyEvents; }
 
-    // Méthodes virtual pure redéfinies
+    // Méthodes virtual pure à redéfinir
     void display() const override
     {
         qDebug() << "Restaurant " << id << " : " << name;
@@ -29,7 +30,7 @@ public:
         qDebug() << "Id des épreuves à proximité : " << nearbyEvents;
     }
 
-    // Pas besoin de redéfinir getPathForItem() car on utilise l'attribut locationImage de la classe mère
+    // Méhode virtual getPathForItem() qu'on peut redéfinir mais étant la même que celui de la classe mère, on ne la redéfinie pas
 
 private:
     // Attributes

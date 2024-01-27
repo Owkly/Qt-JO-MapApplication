@@ -6,18 +6,19 @@ QT += core gui widgets quick quickwidgets location positioning
 
 
 SOURCES += main.cpp \
-           mainWindow.cpp \
            dataManager.cpp \
-           clickableWidget.cpp \
+           mainWindow.cpp \
+           scrollAreaManager.cpp \
            detailedDialog.cpp
 
 
-HEADERS += mainWindow.hpp \
-           entity.hpp \
+HEADERS += entity.hpp \
            location.hpp \
            event.hpp \
            restaurant.hpp \
            dataManager.hpp \
+           mainWindow.hpp \
+           scrollAreaManager.hpp \
            clickableWidget.hpp \
            detailedDialog.hpp
 

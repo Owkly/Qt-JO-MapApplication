@@ -1,7 +1,5 @@
 // detailedDialog.cpp
 #include "detailedDialog.hpp"
-#include "ui_detailedDialog.h"
-#include <QPushButton>
 
 // Constructeur
 DetailedDialog::DetailedDialog(QWidget *parent) : QDialog(parent), ui(new Ui::DetailedDialog) 
@@ -33,7 +31,7 @@ void DetailedDialog::closeDetailedDialog()
     this->close();
 }
 
-// Méthode pour générer le code HTML pour afficher les détails d'une épreuve
+// Méthode pour générer le code HTML dans lequel il y a toutes les informations d'un événement
 QString DetailedDialog::generateEventDetailsHTML(const Event &event, const QStringList &nearbyRestaurantsNames)
 {
     QString codeHTML;
@@ -61,7 +59,7 @@ QString DetailedDialog::generateEventDetailsHTML(const Event &event, const QStri
     return codeHTML;
 }
 
-// Méthode pour générer le code HTML pour afficher les détails d'un restaurant
+// Méthode pour générer le code HTML dans lequel il y a toutes les informations d'un restaurant
 QString DetailedDialog::generateRestaurantDetailsHTML(const Restaurant &restaurant, const QStringList &nearbyEventsNames)
 {
     QString codeHTML;

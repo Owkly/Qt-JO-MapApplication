@@ -1,4 +1,4 @@
-//clickableWidget.hpp
+// clickableWidget.hpp
 #pragma once
 
 #include <QWidget>
@@ -9,15 +9,26 @@ class ClickableWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit ClickableWidget(QWidget *parent = nullptr);
-    void setDetails(const QString &details); // Pour stocker les détails de chaque élément
+    // Constructeur et destructeur
+    ClickableWidget() {}
+    ClickableWidget(QWidget *parent) : QWidget(parent) {}
+    ~ClickableWidget() {}
+
+    // Setter
+    void setDetails(const QString &details) { this->details = details; }
+
+    // Méthode virtuelle de QWidget redéfinie pour émettre un signal lorsqu'on clique sur le widget
+    void mousePressEvent(QMouseEvent *event) override
+    {
+        QWidget::mousePressEvent(event);
+        emit clicked(details); 
+    }
 
 signals:
-    void clicked(const QString &details); // Signal émis lors du clic
-
-protected:
-    void mousePressEvent(QMouseEvent *event) override; // Réagit au clic
+    // Émet un signal indiquant qu'un clic a eu lieu sur le widget, avec les détails associés (QString)
+    void clicked(const QString &details);
 
 private:
-    QString details; // Stocke les détails de l'élément
+    // Attribut
+    QString details;
 };

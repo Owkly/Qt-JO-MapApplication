@@ -11,7 +11,7 @@ public:
     // Getters
     int getId() const { return id; }
 
-    // Méhode virtuelle pure pour afficher les détails d'un objet
+    // Méhode virtuelle pure pour afficher les détails d'un objet et qui doit être redéfinie dans les classes filles
     virtual void display() const = 0;
 
 protected:

@@ -29,15 +29,15 @@ public:
     QStringList getNearbyRestaurantsNames(const QVector<int> &nearbyRestaurantsIds) const;
 
 private:
-    // Attributs
-    QString jsonFilePath;
-    QVector<Event> listEvents;
-    QVector<Restaurant> listRestaurants;
-
     // Méthodes
     QJsonArray readJsonArray(const QString &key);
     Event toEvent(const QJsonObject &eventObj);
     Restaurant toRestaurant(const QJsonObject &restaurantObj);
     QVector<Event> toListEvents();
     QVector<Restaurant> toListRestaurants();
+
+    // Attributs
+    QString jsonFilePath;
+    QVector<Event> listEvents;
+    QVector<Restaurant> listRestaurants;
 };

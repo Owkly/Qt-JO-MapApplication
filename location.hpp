@@ -1,9 +1,10 @@
 // Location.hpp
 #pragma once
-#include "entity.hpp"
 #include <QPixmap>
 #include <QVector>
 #include <QDebug>
+
+#include "entity.hpp"
 
 class Location : public Entity
 {
@@ -19,7 +20,7 @@ public:
     QString getLocationImage() const { return locationImage; }
     QVector<QString> getTransportation() const { return transportation; }
 
-    // Méthode virtuelle pure redéfinie
+    // Méthode virtuelle pure redéfinie et qu'il faut redéfinir dans les classes filles
     void display() const override
     {
         qDebug() << "Location " << id << " : " << name;
@@ -29,6 +30,7 @@ public:
         qDebug() << "Transports : " << transportation;
     }
 
+    // Méthode virtuelle qu'on peut redéfinir dans les classes filles
     virtual QString getPathForItem() const { return locationImage; }
 
 protected:

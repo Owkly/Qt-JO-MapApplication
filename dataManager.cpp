@@ -1,13 +1,14 @@
 // datasManager.cpp
 #include "dataManager.hpp"
 
-// Constructeur et Destructeur
+// Constructeur
 DataManager::DataManager(const QString &jsonFilePath) : jsonFilePath(jsonFilePath)
 {
     listEvents = toListEvents();
     listRestaurants = toListRestaurants();
 }
 
+// Destructeur
 DataManager::~DataManager() {}
 
 // Méthode pour lire le fichier JSON et convertir les données en QJsonArray
@@ -26,7 +27,7 @@ QJsonArray DataManager::readJsonArray(const QString &key)
     return rootObject[key].toArray();
 }
 
-// Convertir un objet JSON en un objet Event
+// Méthode pour convertir un objet JSON en un objet Event (épreuve)
 Event DataManager::toEvent(const QJsonObject &eventObj)
 {
     QVector<int> nearbyRestaurants;
@@ -48,7 +49,7 @@ Event DataManager::toEvent(const QJsonObject &eventObj)
         nearbyRestaurants);
 }
 
-// Convertir un objet JSON en un objet Restaurant
+// Méthode pour convertir un objet JSON en un objet Restaurant
 Restaurant DataManager::toRestaurant(const QJsonObject &restaurantObj)
 {
     QVector<int> nearbyEvents;
@@ -69,7 +70,7 @@ Restaurant DataManager::toRestaurant(const QJsonObject &restaurantObj)
         nearbyEvents);
 }
 
-// Convertir les données du fichier JSON en liste d'objets Event
+// Méthode pour créer une liste d'objets Event à partir des données du fichier JSON
 QVector<Event> DataManager::toListEvents()
 {
     QJsonArray jsonArray = readJsonArray("Epreuves");
@@ -81,7 +82,7 @@ QVector<Event> DataManager::toListEvents()
     return listEvents;
 }
 
-// Convertir les données du fichier JSON en liste d'objets Restaurant
+// Méthode pour créer une liste d'objets Restaurant à partir des données du fichier JSON
 QVector<Restaurant> DataManager::toListRestaurants()
 {
     QJsonArray jsonArray = readJsonArray("Restaurants");
