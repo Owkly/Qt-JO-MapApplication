@@ -15,7 +15,6 @@ Item {
 
     Rectangle {
         id: tooltipBackground
-        color: "white"
         radius: 5
         visible: false
         width: tooltip.width
@@ -24,7 +23,6 @@ Item {
         Text {
             id: tooltip
             text: markerId
-            color: "black"
         }
     }
 
