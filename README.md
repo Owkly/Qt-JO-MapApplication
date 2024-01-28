@@ -4,7 +4,7 @@
 
 ## Clonage du projet
 ```bash
-git clone <URL_DU_PROJET>
+git clone https://github.com/Owkly/Projet-Jeux-Olympiques
 cd Projet_Jeux_Olympique
 ```
 
