@@ -2,7 +2,7 @@
 #include "mainWindow.hpp"
 
 // Constructeur
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), dataManager("lieux.json")
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), dataManager(":/lieux.json")
 {
     // Configuration de base : configuration de l'interface utilisateur et affichage en plein écran
     this->setWindowTitle("JO 2024");
